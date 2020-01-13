@@ -1,0 +1,36 @@
+
+<br *ngIf="!(isHandset$ | async)" />
+<br *ngIf="!(isHandset$ | async)" />
+<br *ngIf="!(isHandset$ | async)" />
+<mat-sidenav-container class="sidenav-container" *ngIf="isHandset$ | async" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"
+               style="background-color: #000000;
+background-image: linear-gradient(315deg, #000000 0%, #414141 74%);">
+    <mat-toolbar><a routerLink="">menu</a></mat-toolbar>
+    <mat-nav-list ><span>
+  <a mat-list-item routerLink="/item1" style="font-family:Orbitron;color:white;">item1</a>
+  <a mat-list-item routerLink="/item2" style="font-family:Orbitron;color:white;">item2</a>
+  <a mat-list-item routerLink="/item3" style="font-family:Orbitron;color:white;">item3</a>
+  <a mat-list-item routerLink="/signup" class="button primary" style="font-family:Orbitron">Sign Up</a>
+    <a mat-list-item routerLink="/login">Log in</a>
+</span>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar >
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon"><img src="assets/toggle.png" style="image-resolution:inherit;" /></mat-icon>
+      </button>
+      <span style="flex:1 1 auto;"></span>
+     <a routerLink="">Logo</a>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
