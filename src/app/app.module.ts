@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { SampleformComponent } from './sampleform/sampleform.component';
+import { StudentComponent } from './student/student.component';
 
 
 const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
@@ -31,7 +33,9 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     LoginComponent,
     MainComponent,
     NavComponent,
-    MainNavComponent
+    MainNavComponent,
+    SampleformComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
