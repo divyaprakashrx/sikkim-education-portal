@@ -4,9 +4,16 @@
     "\\src",
     "\\src\\app",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "\\src\\app\\student"
   ],
   "SelectedNode": "\\src\\app\\student",
+=======
+    "\\src\\app\\school",
+    "\\src\\app\\school\\tdetail"
+  ],
+  "SelectedNode": "\\src\\styles.css",
+>>>>>>> Stashed changes
 =======
     "\\src\\app\\school",
     "\\src\\app\\school\\tdetail"
