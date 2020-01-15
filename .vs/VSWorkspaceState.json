@@ -3,10 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\sampleform",
-    "\\src\\assets",
-    "\\src\\assets\\assets"
+    "\\src\\app\\student"
   ],
-  "SelectedNode": "\\src\\app\\sampleform\\sampleform.component.css",
+  "SelectedNode": "\\src\\app\\student",
   "PreviewInSolutionExplorer": false
 }
