@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
@@ -16,12 +18,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { SampleformComponent } from './sampleform/sampleform.component';
 import { StudentComponent } from './student/student.component';
+import { SsignupComponent } from './student/ssignup/ssignup.component';
+import { SchoolComponent } from './school/school.component';
+import { DashboardComponent } from './school/dashboard/dashboard.component';
+import { TdetailComponent } from './school/tdetail/tdetail.component';
 
 
 const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
-  { path: 'signup',component:SignupComponent},
   { path: '', component: MainComponent },
   { path: 'tab', component: MainComponent }]
 
@@ -29,13 +33,15 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
   declarations: [
     AppComponent,
     NavbarComponent,
-    SignupComponent,
     LoginComponent,
     MainComponent,
     NavComponent,
     MainNavComponent,
-    SampleformComponent,
-    StudentComponent
+    StudentComponent,
+    SsignupComponent,
+    SchoolComponent,
+    DashboardComponent,
+    TdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     MatButtonModule,
     MatIconModule,
     LayoutModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
