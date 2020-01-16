@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';;
@@ -32,17 +32,21 @@ import { MatCardModule } from '@angular/material/card';
 import { SchoolnavComponent } from './school/schoolnav/schoolnav.component';
 import { SscomplainComponent } from './school/sscomplain/sscomplain.component';
 import { TregisterComponent } from './school/teacher/tregister/tregister.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
-  { path: '', component: SchoolComponent },
+  { path: 'school', component: SchoolComponent },
+  { path: '', component: HomeComponent },
   { path: 'ssignup', component: SsignupComponent },
   { path: 'tdetail', component: TdetailComponent },
   { path: 'sscomplain', component: SscomplainComponent },
   { path: 'tregister', component: TregisterComponent },
   { path: 'tab', component: MainComponent }]
 
+
 @NgModule({
+ 
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -57,6 +61,7 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     SchoolnavComponent,
     SscomplainComponent,
     TregisterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +76,6 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     MatIconModule,
     LayoutModule,
     FlexLayoutModule,
-    AngularFirestoreModule,
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
@@ -80,9 +84,15 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     NgbModule,
     DropdownModule.forRoot(),
     NavbarModule,
-    IconsModule
+    IconsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+}
+

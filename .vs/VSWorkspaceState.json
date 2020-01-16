@@ -3,11 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\home",
     "\\src\\app\\school",
-    "\\src\\app\\school\\dashboard",
+    "\\src\\app\\student",
     "\\src\\app\\student\\ssignup",
+    "\\src\\assets",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\school\\dashboard\\dashboard.component.html",
+  "SelectedNode": "\\src\\app\\student",
   "PreviewInSolutionExplorer": false
 }
