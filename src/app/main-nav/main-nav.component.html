@@ -2,7 +2,7 @@
 <br *ngIf="!(isHandset$ | async)" />
 <br *ngIf="!(isHandset$ | async)" />
 <br *ngIf="!(isHandset$ | async)" />
-<mat-sidenav-container class="sidenav-container" *ngIf="isHandset$ | async" >
+<mat-sidenav-container class="sidenav-container" >
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"

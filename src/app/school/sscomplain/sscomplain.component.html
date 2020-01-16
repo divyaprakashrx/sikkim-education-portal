@@ -1,0 +1,45 @@
+<app-schoolnav></app-schoolnav>
+<div class="container" style="margin-top: 69px;">
+  <div id="form-div" style="margin-right:50px;margin-left:50px;">
+    <form method="post" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-12">
+            <h1 class="text-center" style="font-family:Armata, sans-serif;font-size:30px;">Complaint &amp; Feedback</h1>
+          </div>
+        </div>
+        <hr id="hr" style="background-color:#c3bfbf;" />
+        <div class="form-row">
+          <div class="col-10 col-sm-10 col-md-8 offset-1 offset-sm-1 offset-md-2">
+            <p style="font-family:Armata, sans-serif;font-size:22px;"><strong>Email id</strong></p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-10 col-sm-10 col-md-8 offset-1 offset-sm-1 offset-md-2"><input class="form-control" type="email" ngModel email required
+                                                                                         style="font-size:15px;font-family:Armata, sans-serif;" name="email" /></div>
+        </div>
+        <div class="form-row" style="font-family:Armata, sans-serif;margin-top:10px;">
+          <div class="col-10 col-sm-10 col-md-8 offset-1 offset-sm-1 offset-md-2">
+            <p style="font-family:Armata, sans-serif;font-size:22px;"><strong>write Below</strong></p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-10 col-sm-10 col-md-8 offset-1 offset-sm-1 offset-md-2"><textarea class="form-control" style="font-family:Armata, sans-serif;font-size:15px;" maxlength="250" rows="7" name="complain"></textarea></div>
+        </div>
+        <div class="form-row">
+          <div class="col-10 col-sm-10 col-md-8 offset-1 offset-sm-1 offset-md-2">
+            <p class="text-right" style="font-family:Armata, sans-serif;">Max length 250 characters</p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-9 col-sm-5 col-md-4 offset-1 offset-sm-4 offset-md-5">
+            <button class="btn btn-warning" style="font-family:Armata, sans-serif;font-size:14px;color:rgb(0,0,0);" type="reset">Reset </button><button class="btn btn-success" id="submit-btn" style="font-family:Armata, sans-serif;font-size:14px;color:rgb(0,0,0);"
+                                                                                                                                                        type="submit">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

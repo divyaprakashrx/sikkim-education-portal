@@ -1,21 +1,21 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+
 
 @Component({
-  selector: 'app-ssignup',
-  templateUrl: './ssignup.component.html',
-  styleUrls: ['./ssignup.component.css'
-  ]
+  selector: 'app-tregister',
+  templateUrl: './tregister.component.html',
+  styleUrls: ['./tregister.component.css']
 })
-export class SsignupComponent implements OnInit {
+export class TregisterComponent implements OnInit {
   signup: NgForm;
   genders = ['Male', 'Female'];
   studentdata = {
-    sfname:'',
-    slname:'',
-    smfname:'',
-    smlname:'',
-    sffname:'',
+    sfname: '',
+    slname: '',
+    smfname: '',
+    smlname: '',
+    sffname: '',
     sflname: '',
     semail: '',
     saddr: '',
@@ -25,7 +25,7 @@ export class SsignupComponent implements OnInit {
     sclass: '',
     sccode: '',
     sphone: '',
-    saadhar:''
+    saadhar: ''
   }
   constructor() { }
 
@@ -35,7 +35,7 @@ export class SsignupComponent implements OnInit {
     console.log(form);
     this.studentdata.sfname = form.value.sfname;
     this.studentdata.slname = form.value.slname;
-    this.studentdata.smfname =form.value.smfname;
+    this.studentdata.smfname = form.value.smfname;
     this.studentdata.smlname = form.value.smlname;
     this.studentdata.sffname = form.value.sffname;
     this.studentdata.sflname = form.value.sflname;
@@ -51,4 +51,3 @@ export class SsignupComponent implements OnInit {
     alert('Thanks,your request has been recorded!');
   }
 }
- 

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\school",
+    "\\src\\app\\school\\dashboard",
+    "\\src\\app\\student\\ssignup",
+    "\\src\\environments"
+  ],
+  "SelectedNode": "\\src\\app\\school\\dashboard\\dashboard.component.html",
+  "PreviewInSolutionExplorer": false
+}

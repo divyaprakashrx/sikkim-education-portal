@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';;
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { NavComponent } from './nav/nav.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -23,10 +25,21 @@ import { SsignupComponent } from './student/ssignup/ssignup.component';
 import { SchoolComponent } from './school/school.component';
 import { DashboardComponent } from './school/dashboard/dashboard.component';
 import { TdetailComponent } from './school/tdetail/tdetail.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { SchoolnavComponent } from './school/schoolnav/schoolnav.component';
+import { SscomplainComponent } from './school/sscomplain/sscomplain.component';
+import { TregisterComponent } from './school/teacher/tregister/tregister.component';
 
 
 const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
-  { path: '', component: MainComponent },
+  { path: '', component: SchoolComponent },
+  { path: 'ssignup', component: SsignupComponent },
+  { path: 'tdetail', component: TdetailComponent },
+  { path: 'sscomplain', component: SscomplainComponent },
+  { path: 'tregister', component: TregisterComponent },
   { path: 'tab', component: MainComponent }]
 
 @NgModule({
@@ -35,13 +48,15 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     NavbarComponent,
     LoginComponent,
     MainComponent,
-    NavComponent,
     MainNavComponent,
     StudentComponent,
     SsignupComponent,
     SchoolComponent,
     DashboardComponent,
-    TdetailComponent
+    TdetailComponent,
+    SchoolnavComponent,
+    SscomplainComponent,
+    TregisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,8 +71,16 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     MatIconModule,
     LayoutModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    NgbModule,
+    DropdownModule.forRoot(),
+    NavbarModule,
+    IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
