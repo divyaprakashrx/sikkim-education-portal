@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase: {
+  config: {
     apiKey: "AIzaSyD_EfPALswEJLPXAYbKbGaDoMSOzb6NJOg",
     authDomain: "hacknitp.firebaseapp.com",
     databaseURL: "https://hacknitp.firebaseio.com",

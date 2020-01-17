@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { SdetailDataSource, SdetailItem, EXAMPLE_DATA } from '../../school/class/sdetail/sdetail-datasource';
 
 @Component({
   selector: 'app-ssignup',

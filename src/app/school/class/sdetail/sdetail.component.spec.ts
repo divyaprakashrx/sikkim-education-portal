@@ -4,15 +4,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
-import { TdetailComponent } from './tdetail.component';
+import { SdetailComponent } from './sdetail.component';
 
-describe('TdetailComponent', () => {
-  let component: TdetailComponent;
-  let fixture: ComponentFixture<TdetailComponent>;
+describe('SdetailComponent', () => {
+  let component: SdetailComponent;
+  let fixture: ComponentFixture<SdetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TdetailComponent],
+      declarations: [SdetailComponent],
       imports: [
         NoopAnimationsModule,
         MatPaginatorModule,
@@ -23,7 +23,7 @@ describe('TdetailComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TdetailComponent);
+    fixture = TestBed.createComponent(SdetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

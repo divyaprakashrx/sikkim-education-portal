@@ -26,6 +26,8 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.5",
     "@types/jquery": "^3.3.31",
     "angular-bootstrap-md": "^8.8.1",
+    "angular-csv": "^1.0.0",
+    "angular5-csv": "^0.2.11",
     "angularfire2": "^5.3.0",
     "bootstrap": "^4.4.1",
     "canvasjs": "^1.8.3",

@@ -2,38 +2,38 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { TdetailDataSource, TdetailItem } from './tdetail-datasource';
+import { SdetailDataSource, SdetailItem } from './sdetail-datasource';
 
 @Component({
-  selector: 'app-tdetail',
-  templateUrl: './tdetail.component.html',
-  styleUrls: ['./tdetail.component.css']
+  selector: 'app-sdetail',
+  templateUrl: './sdetail.component.html',
+  styleUrls: ['./sdetail.component.css']
 })
-export class TdetailComponent implements AfterViewInit, OnInit {
+export class SdetailComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatTable, { static: false }) table: MatTable<TdetailItem>;
-  dataSource: TdetailDataSource;
+  @ViewChild(MatTable, { static: false }) table: MatTable<SdetailItem>;
+  dataSource: SdetailDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['tfname',
-    'tlname',
-    'temail',
-    'taddr',
-    'tdob',
-    'tqual',
-    'tsex',
-    'tsid',
-    'tdoj',
-    'tsub',
-    'tclass',
-    'tccode',
-    'tphone',
-    'taadhar',
-    'tacname'];
+  displayedColumns = ['sfname',
+    'slname',
+    'semail',
+    'saddr',
+    'sdob',
+    'squal',
+    'ssex',
+    'ssid',
+    'sdoj',
+    'ssub',
+    'sclass',
+    'sccode',
+    'sphone',
+    'saadhar',
+    'sacname'];
 
   ngOnInit() {
-    this.dataSource = new TdetailDataSource();
+    this.dataSource = new SdetailDataSource();
   }
 
   ngAfterViewInit() {

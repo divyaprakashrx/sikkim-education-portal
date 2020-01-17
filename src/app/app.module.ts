@@ -6,20 +6,17 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
-import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';;
-
+import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { MainComponent } from './main/main.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MainNavComponent } from './main-nav/main-nav.component';
 import { StudentComponent } from './student/student.component';
 import { SsignupComponent } from './student/ssignup/ssignup.component';
 import { SchoolComponent } from './school/school.component';
@@ -33,6 +30,14 @@ import { SchoolnavComponent } from './school/schoolnav/schoolnav.component';
 import { SscomplainComponent } from './school/sscomplain/sscomplain.component';
 import { TregisterComponent } from './school/teacher/tregister/tregister.component';
 import { HomeComponent } from './home/home.component';
+import { BsregisterComponent } from './block/bsregister/bsregister.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ClassComponent } from './school/class/class.component';
+import { SdetailComponent } from './school/class/sdetail/sdetail.component';
+import { NtregisterComponent } from './school/ntregister/ntregister.component';
+
 
 
 const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
@@ -41,8 +46,8 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
   { path: 'ssignup', component: SsignupComponent },
   { path: 'tdetail', component: TdetailComponent },
   { path: 'sscomplain', component: SscomplainComponent },
-  { path: 'tregister', component: TregisterComponent },
-  { path: 'tab', component: MainComponent }]
+  { path: 'tregister', component: TregisterComponent }
+]
 
 
 @NgModule({
@@ -51,8 +56,6 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    MainComponent,
-    MainNavComponent,
     StudentComponent,
     SsignupComponent,
     SchoolComponent,
@@ -62,6 +65,10 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     SscomplainComponent,
     TregisterComponent,
     HomeComponent,
+    BsregisterComponent,
+    ClassComponent,
+    SdetailComponent,
+    NtregisterComponent
   ],
   imports: [
     BrowserModule,
@@ -85,8 +92,11 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     DropdownModule.forRoot(),
     NavbarModule,
     IconsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(environment.config),
+    AngularFireDatabaseModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

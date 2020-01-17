@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { TdetailDataSource, TdetailItem, EXAMPLE_DATA } from '../../tdetail/tdetail-datasource';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 
 @Component({
@@ -10,44 +12,50 @@ import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 export class TregisterComponent implements OnInit {
   signup: NgForm;
   genders = ['Male', 'Female'];
-  studentdata = {
-    sfname: '',
-    slname: '',
-    smfname: '',
-    smlname: '',
-    sffname: '',
-    sflname: '',
-    semail: '',
-    saddr: '',
-    ssex: '',
-    ssid: '',
-    sdob: '',
-    sclass: '',
-    sccode: '',
-    sphone: '',
-    saadhar: ''
+  teacherdata = {
+    tfname: '',
+    tlname: '',
+    temail: '',
+    taddr: '',
+    tdob:'',
+    tqual:'',
+    tsex: '',
+    tsid: '',
+    tdoj: '',
+    tsub: '',
+    tclass: '',
+    tccode: '',
+    tphone: '',
+    taadhar: '',
+    tacname: ''
   }
-  constructor() { }
+  constructor(private tdata: AngularFireDatabase) { }
+  teacher: AngularFireList<any>;
 
+  getdetail() {
+    this.teacher = this.tdata.list('tdetails');
+    return this.teacher.snapshotChanges();
+  }
   ngOnInit() {
   }
   onSubmit(form: NgForm) {
     console.log(form);
-    this.studentdata.sfname = form.value.sfname;
-    this.studentdata.slname = form.value.slname;
-    this.studentdata.smfname = form.value.smfname;
-    this.studentdata.smlname = form.value.smlname;
-    this.studentdata.sffname = form.value.sffname;
-    this.studentdata.sflname = form.value.sflname;
-    this.studentdata.semail = form.value.semail;
-    this.studentdata.saddr = form.value.saddr;
-    this.studentdata.ssex = form.value.ssex;
-    this.studentdata.ssid = form.value.ssid;
-    this.studentdata.sdob = form.value.sdob;
-    this.studentdata.sclass = form.value.sclass;
-    this.studentdata.sccode = form.value.sccode;
-    this.studentdata.sphone = form.value.sphone;
-    this.studentdata.saadhar = form.value.saadhar;
+    this.teacherdata.tfname = form.value.tfname;
+    this.teacherdata.tlname = form.value.tlname;
+    this.teacherdata.temail = form.value.temail;
+    this.teacherdata.taddr = form.value.taddr;
+    this.teacherdata.tsex = form.value.tsex;
+    this.teacherdata.tsid = form.value.tsid;
+    this.teacherdata.tdob = form.value.tdob;
+    this.teacherdata.tqual = form.value.tqual;
+    this.teacherdata.tclass = form.value.tclass;
+    this.teacherdata.tccode = form.value.tccode;
+    this.teacherdata.tphone = form.value.tphone;
+    this.teacherdata.taadhar = form.value.taadhar;
+    this.teacherdata.tacname = form.value.tacname;
     alert('Thanks,your request has been recorded!');
+    EXAMPLE_DATA.push(this.teacherdata);
+    this.getdetail();
+    this.teacher.push(form.value);
   }
 }

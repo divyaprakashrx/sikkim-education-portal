@@ -1,144 +1,77 @@
 <app-schoolnav></app-schoolnav>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Teachers Details</h1>
-      <div class="row" style="height: 40px;">
-        <div class="col"></div>
-        <div class="col"><input type="search" style="width: 300px;" placeholder="Search" /></div>
-        <div class="col-xl-1">
-          <h5 class="d-inline-flex justify-content-center align-items-center align-content-center align-self-center m-auto">Sort by:-</h5>
-        </div>
-        <div class="col-xl-4">
-          <div class="dropdown show">
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" type="button" style="width: 400px;background-color: rgb(17,145,114);">Dropdown </button>
-            <div role="menu" class="dropdown-menu show"><a role="presentation" class="dropdown-item" href="#">Qualification</a><a role="presentation" class="dropdown-item" href="#">Batch</a><a role="presentation" class="dropdown-item" href="#">Subject</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row" style="height: 400px;">
-    <div class="col" style="  height: 400;
-">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Faculty Name</th>
-              <th>Qualification</th>
-              <th>Subjects</th>
-              <th>Batch</th>
-              <th>Attendance</th>
-              <th>Salary</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-            </tr>
-            <tr>
-              <td>Cell 1</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-              <td>Cell 2</td>
-            </tr>
-            <tr></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="col" style="  height: 400;
-">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Faculty Name</th>
-            <th>Qualification</th>
-            <th>Subjects</th>
-            <th>Batch</th>
-            <th>Attendance</th>
-            <th>Salary</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-          </tr>
-          <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-          </tr>
-          <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-          </tr>
-          <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-          </tr>
-          <tr>
-            <td>Cell 1</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-            <td>Cell 2</td>
-          </tr>
-          <tr></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 
+<div class="mat-elevation-z8">
+  <mat-paginator #paginator
+                 [length]="dataSource?.data.length"
+                 [pageIndex]="0"
+                 [pageSize]="50"
+                 [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="tfname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tfname</th>
+      <td mat-cell *matCellDef="let row">{{row.tfname}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tlname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tlname</th>
+      <td mat-cell *matCellDef="let row">{{row.tlname}}</td>
+    </ng-container>
+    <ng-container matColumnDef="temail">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>temail</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+    <ng-container matColumnDef="taddr">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>taddr</th>
+      <td mat-cell *matCellDef="let row">{{row.taddr}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tdob">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tdob</th>
+      <td mat-cell *matCellDef="let row">{{row.tdob}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tqual">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tqual</th>
+      <td mat-cell *matCellDef="let row">{{row.tqual}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tsex">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tsex</th>
+      <td mat-cell *matCellDef="let row">{{row.tsex}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tsid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.tsid}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tdoj">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tsid</th>
+      <td mat-cell *matCellDef="let row">{{row.tdoj}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tsub">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tsub</th>
+      <td mat-cell *matCellDef="let row">{{row.tsub}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tclass">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tclass</th>
+      <td mat-cell *matCellDef="let row">{{row.tclass}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tccode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tccode</th>
+      <td mat-cell *matCellDef="let row">{{row.tccode}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tphone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tphone</th>
+      <td mat-cell *matCellDef="let row">{{row.tphone}}</td>
+    </ng-container>
+    <ng-container matColumnDef="taadhar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>taadhar</th>
+      <td mat-cell *matCellDef="let row">{{row.taadhar}}</td>
+    </ng-container>
+    <ng-container matColumnDef="tacname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tacname</th>
+      <td mat-cell *matCellDef="let row">{{row.tacname}}</td>
+    </ng-container>
+    <!-- Name Column -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>

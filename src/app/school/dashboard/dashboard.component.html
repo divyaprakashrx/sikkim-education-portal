@@ -4,7 +4,7 @@
   <div id="wrapper">
     <div class="d-flex flex-column" id="content-wrapper">
       <div id="content">
-        <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+        <!--<nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
           <div class="container-fluid">
             <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
             <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -124,10 +124,10 @@
               </li>
             </ul>
           </div>
-        </nav>
+        </nav>-->
         <div class="container-fluid">
           <div class="d-sm-flex justify-content-between align-items-center mb-4">
-            <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <h3 class="text-dark mb-0">Dashboard</h3><!--<a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
           </div>
           <div class="row">
             <div class="col-md-6 col-xl-3 mb-4">
@@ -207,7 +207,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-area"><canvas height="320" width="564" style="display: block; width: 564px; height: 320px;"></canvas></div>
+                  <div id="barchart" style="height: 370px; width: 100%;"></div>
                 </div>
               </div>
             </div>
@@ -225,74 +225,8 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-area"><canvas height="320" width="249" style="display: block; width: 249px; height: 320px;"></canvas></div>
-                  <div class="text-center small mt-4"><span class="mr-2"><i class="fas fa-circle text-primary"></i> Direct</span><span class="mr-2"><i class="fas fa-circle text-success"></i> Social</span><span class="mr-2"><i class="fas fa-circle text-info"></i> Refferal</span></div>
+                  <div id="progress" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="row" style="  height: 50;
-">
-            <h1>Teacher&#39;s Details</h1>
-          </div>
-          <div class="row">
-            <div class="col" style="height: 400;">
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Faculty Name</th>
-                      <th>Qualification</th>
-                      <th>Subjects</th>
-                      <th>Batch</th>
-                      <th>Attendance</th>
-                      <th>Salary</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Cell 1</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                    </tr>
-                    <tr>
-                      <td>Cell 1</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                    </tr>
-                    <tr>
-                      <td>Cell 1</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                    </tr>
-                    <tr>
-                      <td>Cell 1</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                    </tr>
-                    <tr>
-                      <td>Cell 1</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                      <td>Cell 2</td>
-                    </tr>
-                    <tr></tr>
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>

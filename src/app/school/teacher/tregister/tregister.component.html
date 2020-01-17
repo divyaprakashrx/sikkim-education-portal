@@ -17,14 +17,14 @@
                         <input type="text"
                                class="form-control form-control-user"
                                placeholder="First Name" required
-                               name="sfname"
+                               name="tfname"
                                style="background-color: rgb(239,235,235);margin:auto;"
                                ngModel />
                       </div>
                       <div class="col-sm-6">
                         <input type="text"
                                ngModel
-                               class="form-control form-control-user" placeholder="Last Name" name="slname" style="background-color: rgb(239,235,235);margin:auto;" />
+                               class="form-control form-control-user" placeholder="Last Name" name="tlname" style="background-color: rgb(239,235,235);margin:auto;" />
                       </div>
                     </div>
                     <span>Qualification</span>
@@ -33,7 +33,7 @@
                         <input type="text"
                                class="form-control"
                                ngModel
-                               name="saddr" required
+                               name="tqual" required
                                style="background-color: rgb(239,235,235);" />
                       </div>
                     </div>
@@ -41,14 +41,14 @@
                     <div class="form-group row">
                       <input class="form-control" required
                              ngModel
-                             name="ssex"
+                             name="tdob"
                              type="date"
                              style="background-color: rgb(239,235,235);" />
                     </div>
 
                     <span>Sex</span>
                     <div class="form-row">
-                      <div class="col d-inline-flex align-items-center m-auto" *ngFor="let ssex of genders"><input type="radio" name="ssex" ngModel [value]="ssex" /><span>{{ssex}}</span></div>
+                      <div class="col d-inline-flex align-items-center m-auto" *ngFor="let tsex of genders"><input type="radio" name="tsex" ngModel [value]="tsex" /><span>{{tsex}}</span></div>
                     </div>
                     <div class="form-group row"><span>Permanent Address</span></div>
                     <div class="form-row">
@@ -56,34 +56,34 @@
                         <input type="text"
                                class="form-control"
                                ngModel
-                               name="saddr" required
+                               name="ntaddr" required
                                style="background-color: rgb(239,235,235);" />
                       </div>
                     </div>
                     <span>School Name</span>
-                    <div class="form-group row"><input type="text" required class="form-control" style="background-color: rgb(239,235,235);" ngModel name="ssid" /></div><span>School ID</span>
-                    <div class="form-group row"><input type="text" required class="form-control" style="background-color: rgb(239,235,235);" ngModel name="sdob" /></div><span>Date of Joining</span>
-                    <div class="form-group row"><input class="form-control" required type="date" style="background-color: rgb(239,235,235);" ngModel name="sclass" /></div><span>Subject Proficiency</span>
+                    <div class="form-group row"><input type="text" required class="form-control" style="background-color: rgb(239,235,235);" ngModel name="tsid" /></div><span>School ID</span>
+                    <div class="form-group row"><input type="text" required class="form-control" style="background-color: rgb(239,235,235);" ngModel name="tdoj" /></div><span>Date of Joining</span>
+                    <div class="form-group row"><input class="form-control" required type="date" style="background-color: rgb(239,235,235);" ngModel name="tsub" /></div><span>Subject Proficiency</span>
                     <div class="form-row">
                       <div class="col"><select class="form-control" required style="background-color: rgb(239,235,235);"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select><span>E-mail</span></div>
                     </div>
-                    <div class="form-group row"><input class="form-control" required type="date" style="background-color: rgb(239,235,235);" ngModel name="sclass" /></div><span>Class Alloted</span>
+                    <div class="form-group row"><input class="form-control" required type="date" style="background-color: rgb(239,235,235);" ngModel name="tclass" /></div><span>Class Alloted</span>
                     <div class="form-row">
                       <div class="col"><select class="form-control" required style="background-color: rgb(239,235,235);"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select><span>E-mail</span></div>
                     </div>
                     <div class="form-row">
-                      <div class="col"><input type="email" class="form-control" required email name="semail" placeholder="E-mail" style="background-color: rgb(239,235,235);" /></div>
+                      <div class="col"><input type="email" class="form-control" required email name="temail" placeholder="E-mail" style="background-color: rgb(239,235,235);" /></div>
                     </div><span>Phone No.</span>
                     <div class="form-row">
                       <div class="col-xl-3" style="width: 30px;"><input type="text" required class="form-control d-flex justify-content-center align-items-center align-content-center m-auto" style="width: 80px;" value="+91" name="sccode" placeholder="+91" /></div>
-                      <div class="col"><input type="text" class="form-control" required placeholder="Phone Number" name="sphone" style="background-color: rgb(239,235,235);" /></div>
+                      <div class="col"><input type="text" class="form-control" required placeholder="Phone Number" name="tphone" style="background-color: rgb(239,235,235);" /></div>
                     </div><span>Aadhar Number</span>
                     <div class="form-row">
-                      <div class="col"><input type="text" class="form-control" required placeholder="Aadhar No." name="saadhar" style="background-color: rgb(239,235,235);" /></div>
+                      <div class="col"><input type="text" class="form-control" required placeholder="Aadhar No." name="taadhar" style="background-color: rgb(239,235,235);" /></div>
                     </div>
                     <span>Bank Account Details</span>
                     <div class="form-row">
-                      <div class="col"><input type="text" class="form-control" required placeholder="Ac Name" name="acname" style="background-color: rgb(239,235,235);" /></div>
+                      <div class="col"><input type="text" class="form-control" required placeholder="Ac Name" name="tacname" style="background-color: rgb(239,235,235);" /></div>
                     </div>
                     <hr /><button class="btn btn-primary btn-block text-white btn-user" type="submit">Register Account</button>
                     <hr />
