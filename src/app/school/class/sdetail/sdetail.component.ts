@@ -2,7 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { SdetailDataSource, SdetailItem } from './sdetail-datasource';
+import { SdetailDataSource, SdetailItem, EXAMPLE_DATA } from './sdetail-datasource';
+import { ngxCsv } from 'ngx-csv';
 
 @Component({
   selector: 'app-sdetail',
@@ -18,20 +19,22 @@ export class SdetailComponent implements AfterViewInit, OnInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['sfname',
     'slname',
+    'sffname',
+    'sflname',
+    'smfname',
+    'smlname',
     'semail',
     'saddr',
     'sdob',
-    'squal',
     'ssex',
     'ssid',
-    'sdoj',
-    'ssub',
     'sclass',
     'sccode',
     'sphone',
-    'saadhar',
-    'sacname'];
-
+    'saadhar'];
+  onExport() {
+    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
+  }
   ngOnInit() {
     this.dataSource = new SdetailDataSource();
   }

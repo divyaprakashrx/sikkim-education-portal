@@ -35,6 +35,7 @@
     "angularfire2": "^5.3.0",
     "bootstrap": "^4.4.1",
     "canvasjs": "^1.8.3",
+    "csv-database": "^0.9.2",
     "firebase": "^7.6.2",
     "jquery": "^3.4.1",
     "ngx-csv": "^0.3.1",

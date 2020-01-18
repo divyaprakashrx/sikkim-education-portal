@@ -10,8 +10,13 @@ export class SmainComponent implements OnInit {
     'assets/carousel/1(2).jpg',
     'assets/carousel/1(3).jpg',
     'assets/carousel/1(5).jpg',
-    
-
+    'assets/corousel/school3.jpg',
+    'assets/corousel/school4.jpg',
+    'assets/corousel/school5.jpg',
+    'assets/corousel/school6.jpg',
+    'assets/corousel/school7.jpg',
+    'assets/corousel/school8.jpg',
+    'assets/corousel/school9.jpg',
   ];
   constructor() { }
 

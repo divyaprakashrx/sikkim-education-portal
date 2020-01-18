@@ -2,7 +2,10 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { TdetailDataSource, TdetailItem } from './tdetail-datasource';
+import { TdetailDataSource, TdetailItem, EXAMPLE_DATA } from './tdetail-datasource';
+import { ngxCsv } from 'ngx-csv';
+
+
 
 @Component({
   selector: 'app-tdetail',
@@ -31,7 +34,9 @@ export class TdetailComponent implements AfterViewInit, OnInit {
     'tphone',
     'taadhar',
     'tacname'];
-
+  onExport() {
+    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
+  }
   ngOnInit() {
     this.dataSource = new TdetailDataSource();
   }

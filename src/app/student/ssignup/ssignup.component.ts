@@ -3,6 +3,7 @@ import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { SdetailDataSource, SdetailItem, EXAMPLE_DATA } from '../../school/class/sdetail/sdetail-datasource';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
+import { Papa } from 'ngx-papaparse';
 
 @Component({
   selector: 'app-ssignup',
@@ -70,5 +71,8 @@ export class SsignupComponent implements OnInit {
     form.reset;
   }
 }
+function voiceInputOver(val) {
+  alert("Voice input is complete");
+  alert("Your input is " + val);
+}
 
- 

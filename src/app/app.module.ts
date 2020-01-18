@@ -8,6 +8,8 @@ import { environment } from '../environments/environment';
 import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';
 
+
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +22,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { StudentComponent } from './student/student.component';
 import { SsignupComponent } from './student/ssignup/ssignup.component';
 import { SchoolComponent } from './school/school.component';
-import { DashboardComponent } from './school/dashboard/dashboard.component';
+import { SdashboardComponent } from './school/sdashboard/sdashboard.component';
 import { TdetailComponent } from './school/tdetail/tdetail.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -43,15 +45,22 @@ import { SattendComponent } from './school/sattend/sattend.component';
 import { PapaParseModule,Papa } from 'ngx-papaparse';
 import { DummyComponent } from './dummy/dummy.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BlocknavComponent } from './block/blocknav/blocknav.component';
+import { BdashboardComponent } from './block/bdashboard/bdashboard.component';
+import { BlockComponent } from './block/block.component';
+import { BinspectComponent } from './block/binspect/binspect.component';
+import { DistrictComponent } from './district/district.component';
+import { DdashComponent } from './district/ddash/ddash.component';
 
 
 const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
 { path: 'school', component: SchoolComponent },
   { path: '', component: HomeComponent },
+  { path: 'block', component: BlockComponent },
   { path: 'smain', component: SmainComponent },
 { path: 'ssignup', component: SsignupComponent },
 { path: 'tdetail', component: TdetailComponent },
-{ path: 'Sdetail', component: SdetailComponent },
+{ path: 'sdetail', component: SdetailComponent },
 { path: 'sscomplain', component: SscomplainComponent },
   { path: 'tregister', component: TregisterComponent },
   { path: 'ntregister', component: NtregisterComponent },
@@ -68,7 +77,7 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     StudentComponent,
     SsignupComponent,
     SchoolComponent,
-    DashboardComponent,
+    SdashboardComponent,
     TdetailComponent,
     SchoolnavComponent,
     SscomplainComponent,
@@ -82,6 +91,12 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     SmainComponent,
     SattendComponent,
     DummyComponent,
+    BlocknavComponent,
+    BdashboardComponent,
+    BlockComponent,
+    BinspectComponent,
+    DistrictComponent,
+    DdashComponent,
   ],
   imports: [
     BrowserModule,
@@ -121,4 +136,5 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
 export class AppModule {
 
 }
+
 
