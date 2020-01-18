@@ -3,30 +3,33 @@
   <div class="col"><h1>Student Details</h1></div>
   <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 </div>
-<form>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="form-group">
     <div class="form-row">
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control" placeholder="First Name" required
+      <div class="col"><span>First Name</span><input type="text" ngModel class="form-control" placeholder="First Name" required
                                  name="sfname" /></div>
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control" placeholder="Last Name" name="slname" /></div>
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control" placeholder="School Id"
-                                 name="ssid"/></div>
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control"
+      <div class="col"><span>Last Name</span><input type="text" ngModel class="form-control" placeholder="Last Name" name="slname" /></div>
+      <div class="col"><span>Student Id</span><input type="text" ngModel class="form-control" placeholder="School Id"
+                                 name="sid"/></div>
+      <div class="col"><span>Maths</span><input type="text" ngModel class="form-control"
                                  placeholder="Maths"
                                  name="maths" /></div>
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control" placeholder="Chemistry"
+      <div class="col"><span>Chemistry</span><input type="text" ngModel class="form-control" placeholder="Chemistry"
                                  name="chemistry" /></div>
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control" placeholder="Biology"
+      <div class="col"><span>Biology</span><input type="text" ngModel class="form-control" placeholder="Biology"
                                  name="biology" /></div>
-      <div class="col"><span>Text</span><input type="text" ngModel class="form-control" placeholder="History"
+      <div class="col"><span>History</span><input type="text" ngModel class="form-control" placeholder="History"
                                  name="history" /></div>
     </div>
     <div class="form-row">
-      <div class="col"><span>Text</span><input class="form-control" ngModel type="text" placeholder="Civics" name="civics" required /></div>
-      <div class="col"><span>Text</span><input class="form-control" ngModel type="text" placeholder="Economics" name="economics" required /></div>
-      <div class="col"><span>Text</span><input class="form-control" ngModel type="text" placeholder="English" name="english" required /></div>
-      <div class="col"><span>Text</span><input class="form-control" ngModel type="text" placeholder="Hindi" name="hindi" required/></div>
-    </div>
+      <div class="col"><span>Civics</span><input class="form-control" ngModel type="text" placeholder="Civics" name="civics" required /></div>
+      <div class="col"><span>Economics</span><input class="form-control" ngModel type="text" placeholder="Economics" name="economics" required /></div>
+      <div class="col"><span>English</span><input class="form-control" ngModel type="text" placeholder="English" name="english" required /></div>
+      <div class="col"><span>Hindi</span><input class="form-control" ngModel type="text" placeholder="Hindi" name="hindi" required /></div>
+      <div class="col">
+        <button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin:auto;">Add</button>
+      </div>
+      </div>
   </div>
 </form>
 <div class="mat-elevation-z8">

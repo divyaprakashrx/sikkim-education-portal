@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable,MatTableDataSource } from '@angular/material/table';
 import { ExamDataSource, ExamItem, EXAMPLE_DATA } from './exam-datasource';
 import { ngxCsv } from 'ngx-csv';
+import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 
 @Component({
@@ -48,5 +50,8 @@ export class ExamComponent implements AfterViewInit, OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+  onSubmit(form: NgForm) {
+    EXAMPLE_DATA.push(form.value);
   }
 }

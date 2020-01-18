@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\home",
+    "\\src\\app\\block\\blocknav",
+    "\\src\\app\\district\\dnav",
     "\\src\\app\\school",
-    "\\src\\app\\school\\class",
-    "\\src\\app\\school\\class\\sdetail",
-    "\\src\\app\\school\\dashboard",
+    "\\src\\app\\school\\exam",
     "\\src\\app\\school\\tdetail",
-    "\\src\\assets"
+    "\\src\\app\\student",
+    "\\src\\app\\student\\ssignup"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\school\\tdetail\\tdetail.component.html",
   "PreviewInSolutionExplorer": false
 }
