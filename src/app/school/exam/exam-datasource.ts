@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+
 
 // TODO: Replace this with your own data model type
 export interface ExamItem {
@@ -22,8 +24,45 @@ export interface ExamItem {
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: ExamItem[] = [
-  { sfname: '001', slname: 'slname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+export var EXAMPLE_DATA: ExamItem[] = [
+  { sfname: '001', slname: 'meafds', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sadfs', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'eqwe', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'asame', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'safse', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'eqrame', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
   { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
   { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
   { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
@@ -42,7 +81,11 @@ export class ExamDataSource extends DataSource<ExamItem> {
   data: ExamItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
+  dat = new MatTableDataSource(EXAMPLE_DATA);
 
+  applyFilter(filterValue: string) {
+    this.dat.filter = filterValue.trim().toLowerCase();
+  }
   constructor() {
     super();
   }

@@ -1,3 +1,11 @@
 .full-width-table {
   width: 80%;
 }
+tr:hover {
+  background-color: #7E8A98;
+}
+
+th {
+  background-color: #19559A;
+  color: white;
+}

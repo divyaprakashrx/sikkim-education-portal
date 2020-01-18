@@ -51,11 +51,13 @@ import { BlockComponent } from './block/block.component';
 import { BinspectComponent } from './block/binspect/binspect.component';
 import { DistrictComponent } from './district/district.component';
 import { DdashComponent } from './district/ddash/ddash.component';
+import { DnavComponent } from './district/dnav/dnav.component';
 
 
 const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
 { path: 'school', component: SchoolComponent },
   { path: '', component: HomeComponent },
+  { path: 'district', component: DistrictComponent },
   { path: 'block', component: BlockComponent },
   { path: 'smain', component: SmainComponent },
 { path: 'ssignup', component: SsignupComponent },
@@ -97,6 +99,7 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     BinspectComponent,
     DistrictComponent,
     DdashComponent,
+    DnavComponent,
   ],
   imports: [
     BrowserModule,

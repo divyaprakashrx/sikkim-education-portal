@@ -27,15 +27,15 @@ export class BdashboardComponent implements OnInit {
       data: [{
         type: "column",
         dataPoints: [
-          { y: 71, label: "ABC" },
-          { y: 55, label: "DEF" },
-          { y: 50, label: "GHI" },
-          { y: 65, label: "JKL" },
-          { y: 95, label: "MNO" },
-          { y: 68, label: "ASF" },
-          { y: 28, label: "GAFDS" },
-          { y: 34, label: "ADFS" },
-          { y: 14, label: "SDAF" }
+          { y: attendance.ABC, label: "ABC" },
+          { y: attendance.DEF, label: "DEF" },
+          { y: attendance.GHI, label: "GHI" },
+          { y: attendance.JKL, label: "JKL" },
+          { y: attendance.MNO, label: "MNO" },
+          { y: attendance.ASF, label: "ASF" },
+          { y: attendance.GAFDS, label: "GAFDS" },
+          { y: attendance.ADFS, label: "ADFS" },
+          { y: attendance.SDAF, label: "SDAF" }
         ]
       }]
     });
@@ -76,4 +76,16 @@ var investment = {
   Education: 150,
   PlayGroup: 150,
   Others: 250,
+}
+var attendance = {
+  ABC: 69,
+  DEF: 45,
+  GHI: 23,
+  JKL: 45,
+  MNO: 23,
+  ASF: 32,
+  GAFDS: 42,
+  ADFS: 34,
+  SDAF:45,
+
 }

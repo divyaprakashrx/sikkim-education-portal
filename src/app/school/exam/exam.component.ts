@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
-import { ExamDataSource, ExamItem } from './exam-datasource';
+import { MatTable,MatTableDataSource } from '@angular/material/table';
+import { ExamDataSource, ExamItem, EXAMPLE_DATA } from './exam-datasource';
+import { ngxCsv } from 'ngx-csv';
+
 
 @Component({
   selector: 'app-exam',
@@ -14,7 +16,11 @@ export class ExamComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild(MatTable, {static: false}) table: MatTable<ExamItem>;
   dataSource: ExamDataSource;
+  dat = new MatTableDataSource(EXAMPLE_DATA);
 
+  applyFilter(filterValue: string) {
+    this.dat.filter = filterValue.trim().toLowerCase();
+  }
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['sfname',
     'slname',
@@ -32,6 +38,10 @@ export class ExamComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new ExamDataSource();
+  }
+
+  onExport() {
+    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
   }
 
   ngAfterViewInit() {

@@ -30,13 +30,17 @@ export class SsignupComponent implements OnInit {
     sclass: '',
     sccode: '',
     sphone: '',
-    saadhar:''
+    saadhar: '',
+    sweight: '',
+    seyesight: '',
+    spastdisease:'',
+
   }
   constructor(private StudentDetails: AngularFireDatabase) { }
   sdetail: AngularFireList<any>;
 
   getForm() {
-    this.sdetail = this.StudentDetails.list('student/I');
+    this.sdetail = this.StudentDetails.list('student/I' + this.studentdata.ssid);
     return this.sdetail.snapshotChanges();
   }
 
@@ -63,11 +67,13 @@ export class SsignupComponent implements OnInit {
     this.studentdata.sccode = form.value.sccode;
     this.studentdata.sphone = form.value.sphone;
     this.studentdata.saadhar = form.value.saadhar;
+    this.studentdata.sweight = form.value.sweight;
+    this.studentdata.seyesight = form.value.seyesight;
+    this.studentdata.spastdisease = form.value.spastdisease;
     alert('Thanks,your request has been recorded!');
     this.getForm();
     this.sdetail.push(form.value);
     EXAMPLE_DATA.push(form.value);
-    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
     form.reset;
   }
 }

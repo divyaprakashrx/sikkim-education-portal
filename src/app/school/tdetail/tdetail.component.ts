@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { TdetailDataSource, TdetailItem, EXAMPLE_DATA } from './tdetail-datasource';
 import { ngxCsv } from 'ngx-csv';
 
@@ -17,7 +17,11 @@ export class TdetailComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatTable, { static: false }) table: MatTable<TdetailItem>;
   dataSource: TdetailDataSource;
+  dat = new MatTableDataSource(EXAMPLE_DATA);
 
+  applyFilter(filterValue: string) {
+    this.dat.filter = filterValue.trim().toLowerCase();
+  }
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['tfname',
     'tlname',
@@ -38,12 +42,16 @@ export class TdetailComponent implements AfterViewInit, OnInit {
     new ngxCsv(EXAMPLE_DATA, 'StudentReport');
   }
   ngOnInit() {
-    this.dataSource = new TdetailDataSource();
+    
   }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+    
   }
+ 
+  
 }
+

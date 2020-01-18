@@ -4,6 +4,10 @@
   <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 </div>
 <div class="mat-elevation-z8">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
   <mat-paginator #paginator
                  [length]="dataSource?.data.length"
                  [pageIndex]="0"
