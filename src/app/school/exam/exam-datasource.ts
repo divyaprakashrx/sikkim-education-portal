@@ -6,32 +6,31 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface ExamItem {
-  name: string;
-  id: number;
+  sfname: string;
+  slname: string;
+  sid: string;
+  maths: string;
+  physics: string;
+  chemistry: string;
+  biology: string;
+  history: string;
+  geography: string;
+  civics: string;
+  economics: string;
+  english: string;
+  hindi: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: ExamItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  { sfname: '001', slname: 'slname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
+  { sfname: '001', slname: 'sfname', sid: '003', maths: '004', physics: '005', chemistry: '006', biology: '007', history: '008', geography: '009', civics: '010', economics: '011', english: '012', hindi: '013'},
 ];
 
 /**
@@ -94,8 +93,19 @@ export class ExamDataSource extends DataSource<ExamItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'sfname': return compare(a.sfname, b.sfname, isAsc);
+        case 'slname': return compare(a.slname, b.slname, isAsc);
+        case 'sid': return compare(a.sid, b.sid, isAsc);
+        case 'maths': return compare(a.maths, b.maths, isAsc);
+        case 'physics': return compare(a.physics, b.physics, isAsc);
+        case 'chemistry': return compare(a.chemistry, b.chemistry, isAsc);
+        case 'biology': return compare(a.biology, b.biology, isAsc);
+        case 'history': return compare(a.history, b.history, isAsc);
+        case 'geography': return compare(a.geography, b.geography, isAsc);
+        case 'civics': return compare(a.civics, b.civics, isAsc);
+        case 'economics': return compare(a.economics, b.economics, isAsc);
+        case 'english': return compare(a.english, b.english, isAsc);
+        case 'hindi': return compare(a.hindi, b.hindi, isAsc);
         default: return 0;
       }
     });

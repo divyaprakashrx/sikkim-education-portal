@@ -2,36 +2,24 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { ExamDataSource, ExamItem } from './exam-datasource';
+import { AttendanceDataSource, AttendanceItem } from './attendance-datasource';
 
 @Component({
-  selector: 'app-exam',
-  templateUrl: './exam.component.html',
-  styleUrls: ['./exam.component.css']
+  selector: 'app-attendance',
+  templateUrl: './attendance.component.html',
+  styleUrls: ['./attendance.component.css']
 })
-export class ExamComponent implements AfterViewInit, OnInit {
+export class AttendanceComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
-  @ViewChild(MatTable, {static: false}) table: MatTable<ExamItem>;
-  dataSource: ExamDataSource;
+  @ViewChild(MatTable, {static: false}) table: MatTable<AttendanceItem>;
+  dataSource: AttendanceDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['sfname',
-    'slname',
-    'sid',
-    'maths',
-    'physics',
-    'chemistry',
-    'biology',
-    'history',
-    'geography',
-    'civics',
-    'economics',
-    'english',
-    'hindi'];
+  displayedColumns = ['id', 'name'];
 
   ngOnInit() {
-    this.dataSource = new ExamDataSource();
+    this.dataSource = new AttendanceDataSource();
   }
 
   ngAfterViewInit() {

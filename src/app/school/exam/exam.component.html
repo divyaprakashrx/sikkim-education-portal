@@ -1,15 +1,82 @@
+<app-schoolnav></app-schoolnav>
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    <!-- sfname Column -->
+    <ng-container matColumnDef="sfname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>sfname</th>
+      <td mat-cell *matCellDef="let row">{{row.sfname}}</td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    <!-- slname Column -->
+    <ng-container matColumnDef="slname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>slname</th>
+      <td mat-cell *matCellDef="let row">{{row.slname}}</td>
+    </ng-container>
+
+    <!-- sid Column -->
+    <ng-container matColumnDef="sid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>sid</th>
+      <td mat-cell *matCellDef="let row">{{row.sid}}</td>
+    </ng-container>
+
+    <!-- maths Column -->
+    <ng-container matColumnDef="maths">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>maths</th>
+      <td mat-cell *matCellDef="let row">{{row.maths}}</td>
+    </ng-container>
+
+    <!-- physics Column -->
+    <ng-container matColumnDef="physics">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>physics</th>
+      <td mat-cell *matCellDef="let row">{{row.physics}}</td>
+    </ng-container>
+
+    <!-- chemistry Column -->
+    <ng-container matColumnDef="chemistry">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>chemistry</th>
+      <td mat-cell *matCellDef="let row">{{row.chemistry}}</td>
+    </ng-container>
+
+    <!-- biology Column -->
+    <ng-container matColumnDef="biology">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>biology</th>
+      <td mat-cell *matCellDef="let row">{{row.biology}}</td>
+    </ng-container>
+
+    <!-- history Column -->
+    <ng-container matColumnDef="history">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>history</th>
+      <td mat-cell *matCellDef="let row">{{row.history}}</td>
+    </ng-container>
+
+    <!-- geography Column -->
+    <ng-container matColumnDef="geography">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>geography</th>
+      <td mat-cell *matCellDef="let row">{{row.geography}}</td>
+    </ng-container>
+
+    <!-- civics Column -->
+    <ng-container matColumnDef="civics">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>civics</th>
+      <td mat-cell *matCellDef="let row">{{row.civics}}</td>
+    </ng-container>
+
+    <!-- economics Column -->
+    <ng-container matColumnDef="economics">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>economics</th>
+      <td mat-cell *matCellDef="let row">{{row.economics}}</td>
+    </ng-container>
+
+    <!-- english Column -->
+    <ng-container matColumnDef="english">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>english</th>
+      <td mat-cell *matCellDef="let row">{{row.english}}</td>
+    </ng-container>
+
+    <!-- hindi Column -->
+    <ng-container matColumnDef="hindi">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>hindi</th>
+      <td mat-cell *matCellDef="let row">{{row.hindi}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
