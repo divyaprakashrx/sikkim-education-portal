@@ -37,6 +37,7 @@
     "canvasjs": "^1.8.3",
     "firebase": "^7.6.2",
     "jquery": "^3.4.1",
+    "ngx-csv": "^0.3.1",
     "ngx-papaparse": "^3.0.4",
     "papaparse": "^5.1.1",
     "rxjs": "^6.4.0",

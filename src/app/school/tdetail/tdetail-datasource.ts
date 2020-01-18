@@ -32,9 +32,11 @@ export var EXAMPLE_DATA: TdetailItem[] = [];
  * (including sorting, pagination, and filtering).
  */
 export class TdetailDataSource extends DataSource<TdetailItem> {
+  
   data: TdetailItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
+  
 
   constructor() {
     super();

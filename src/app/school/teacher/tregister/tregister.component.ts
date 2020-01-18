@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { TdetailDataSource, TdetailItem, EXAMPLE_DATA } from '../../tdetail/tdetail-datasource';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 
 @Component({
@@ -29,6 +30,8 @@ export class TregisterComponent implements OnInit {
     taadhar: '',
     tacname: ''
   }
+  
+
   constructor(private tdata: AngularFireDatabase) { }
   teacher: AngularFireList<any>;
 
@@ -57,5 +60,6 @@ export class TregisterComponent implements OnInit {
     EXAMPLE_DATA.push(this.teacherdata);
     this.getdetail();
     this.teacher.push(form.value);
+    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
   }
 }

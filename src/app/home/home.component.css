@@ -693,16 +693,15 @@ button.swiper-pagination-bullet {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif,'Cooper Black';
   font-size: 15px;
   font-weight: normal;
   color: hsl(0, 0%, 90%);
 }
 
 @font-face {
-  font-family: "mountains";
-  src: url(fonts/beyond_the_mountains.ttf);
-  src: url(fonts/beyond_the_mountains.otf);
+  font-family: Cooper Black;
+  
   font-weight: 400;
 }
 

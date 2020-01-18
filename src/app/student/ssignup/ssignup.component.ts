@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { SdetailDataSource, SdetailItem, EXAMPLE_DATA } from '../../school/class/sdetail/sdetail-datasource';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 @Component({
   selector: 'app-ssignup',
@@ -64,6 +65,8 @@ export class SsignupComponent implements OnInit {
     alert('Thanks,your request has been recorded!');
     this.getForm();
     this.sdetail.push(form.value);
+    EXAMPLE_DATA.push(form.value);
+    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
     form.reset;
   }
 }

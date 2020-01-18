@@ -112,6 +112,7 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     MatSortModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     PapaParseModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
