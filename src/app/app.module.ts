@@ -40,7 +40,9 @@ import { NtregisterComponent } from './school/ntregister/ntregister.component';
 import { ExamComponent } from './school/exam/exam.component';
 import { SmainComponent } from './school/smain/smain.component';
 import { SattendComponent } from './school/sattend/sattend.component';
-
+import { PapaParseModule,Papa } from 'ngx-papaparse';
+import { DummyComponent } from './dummy/dummy.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
@@ -49,8 +51,10 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
   { path: 'smain', component: SmainComponent },
 { path: 'ssignup', component: SsignupComponent },
 { path: 'tdetail', component: TdetailComponent },
+{ path: 'Sdetail', component: SdetailComponent },
 { path: 'sscomplain', component: SscomplainComponent },
   { path: 'tregister', component: TregisterComponent },
+  { path: 'ntregister', component: NtregisterComponent },
   { path: 'exam', component: ExamComponent }
 ]
 
@@ -77,6 +81,7 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     ExamComponent,
     SmainComponent,
     SattendComponent,
+    DummyComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +110,8 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    PapaParseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

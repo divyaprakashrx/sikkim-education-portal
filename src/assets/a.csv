@@ -1,0 +1,7 @@
+Date,"First name","Last Name","Email","Amount","Currency","InvoiceID","country"
+08.22.2019,"john","Grimn","abc@def.com","80,00","INR","0001","IND"
+08.21.2019,"john","Grimn","abc@def.com","50,00","INR","0002","IND"
+08.20.2019,"john","Grimn","abc@def.com","45,00","INR","0003","IND"
+08.19.2019,"john","Grimn","abc@def.com","40,00","INR","0004","IND"
+08.18.2019,"john","Grimn","abc@def.com","39,00","INR","0005","IND"
+08.17.2019,"john","Grimn","abc@def.com","35,00","INR","0006","IND"

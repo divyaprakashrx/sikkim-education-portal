@@ -1,0 +1,1 @@
+http-server ./dist/hack -c-1-o

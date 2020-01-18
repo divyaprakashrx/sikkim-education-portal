@@ -12,12 +12,24 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="rb.ico">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
 </head>
 <body>
   <app-root id="root">
     <section class="d-flex justify-content-center align-items-center align-content-center align-self-start m-auto" style="width: 1920px;height: 700px;">
-      <img class="d-flex justify-content-center" src="assets/loading.gif" />
+      <img class="d-flex justify-content-center" src="assets/loading.gif"/>
     </section>
   </app-root>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registered');
+    }).catch(function(err) {
+      console.log('Service Worker registration failed: ', err);
+    });
+  }
+  </script>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>
