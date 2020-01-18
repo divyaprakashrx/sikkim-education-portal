@@ -38,6 +38,8 @@ import { ClassComponent } from './school/class/class.component';
 import { SdetailComponent } from './school/class/sdetail/sdetail.component';
 import { NtregisterComponent } from './school/ntregister/ntregister.component';
 import { ExamComponent } from './school/exam/exam.component';
+import { SmainComponent } from './school/smain/smain.component';
+import { SattendComponent } from './school/sattend/sattend.component';
 
 
 
@@ -72,6 +74,8 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     SdetailComponent,
     NtregisterComponent,
     ExamComponent,
+    SmainComponent,
+    SattendComponent,
   ],
   imports: [
     BrowserModule,
