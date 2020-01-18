@@ -37,16 +37,18 @@ import { MatSortModule } from '@angular/material/sort';
 import { ClassComponent } from './school/class/class.component';
 import { SdetailComponent } from './school/class/sdetail/sdetail.component';
 import { NtregisterComponent } from './school/ntregister/ntregister.component';
+import { ExamComponent } from './school/exam/exam.component';
 
 
 
-const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
-  { path: 'school', component: SchoolComponent },
-  { path: '', component: HomeComponent },
-  { path: 'ssignup', component: SsignupComponent },
-  { path: 'tdetail', component: TdetailComponent },
-  { path: 'sscomplain', component: SscomplainComponent },
-  { path: 'tregister', component: TregisterComponent }
+const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
+{ path: 'school', component: SchoolComponent },
+{ path: '', component: HomeComponent },
+{ path: 'ssignup', component: SsignupComponent },
+{ path: 'tdetail', component: TdetailComponent },
+{ path: 'sscomplain', component: SscomplainComponent },
+  { path: 'tregister', component: TregisterComponent },
+  { path: 'exam', component: ExamComponent }
 ]
 
 
@@ -68,7 +70,8 @@ const appRoutes: Routes=[{ path: 'login',component:LoginComponent},
     BsregisterComponent,
     ClassComponent,
     SdetailComponent,
-    NtregisterComponent
+    NtregisterComponent,
+    ExamComponent,
   ],
   imports: [
     BrowserModule,

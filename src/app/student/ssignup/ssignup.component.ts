@@ -30,33 +30,16 @@ export class SsignupComponent implements OnInit {
     sphone: '',
     saadhar:''
   }
-  constructor(private firebase: AngularFireDatabase) { }
+  constructor(private StudentDetails: AngularFireDatabase) { }
   sdetail: AngularFireList<any>;
 
   getForm() {
-    this.sdetail = this.firebase.list('student/I');
+    this.sdetail = this.StudentDetails.list('student/I');
     return this.sdetail.snapshotChanges();
   }
 
-  setForm(studentdata) {
-    this.sdetail.push({
-      sfname:studentdata.sfname,
-      slname:studentdata.slname,
-      smfname:studentdata.smfname,
-      smlname:studentdata.smlname,
-      sffname: studentdata.sffname,
-      sflname: studentdata.sflname,
-      semail:studentdata.semail,
-      saddr:studentdata.saddr,
-      ssex:studentdata.ssex,
-      ssid:studentdata.ssid,
-      sdob:studentdata.sdob,
-      sclass:studentdata.sclass,
-      sccode:studentdata.sccode,
-      sphone:studentdata.sphone,
-      saadhar:studentdata.saadhar
-    })
-  }
+  
+
 
   ngOnInit() {
     this.getForm();
@@ -79,7 +62,9 @@ export class SsignupComponent implements OnInit {
     this.studentdata.sphone = form.value.sphone;
     this.studentdata.saadhar = form.value.saadhar;
     alert('Thanks,your request has been recorded!');
-    this.setForm(form.value);
+    this.getForm();
+    this.sdetail.push(form.value);
+    form.reset;
   }
 }
 

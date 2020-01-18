@@ -3,11 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\home",
     "\\src\\app\\school",
-    "\\src\\app\\school\\teacher",
-    "\\src\\app\\school\\teacher\\tregister",
-    "\\src\\environments"
+    "\\src\\app\\school\\class",
+    "\\src\\app\\school\\class\\sdetail",
+    "\\src\\app\\school\\dashboard",
+    "\\src\\app\\school\\tdetail",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\firebase.json",
+  "SelectedNode": "\\src\\index.html",
   "PreviewInSolutionExplorer": false
 }
