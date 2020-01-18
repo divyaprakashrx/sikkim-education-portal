@@ -5,13 +5,13 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
-export interface AttendanceItem {
+export interface SattendItem {
   name: string;
   id: number;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: AttendanceItem[] = [
+const EXAMPLE_DATA: SattendItem[] = [
   {id: 1, name: 'Hydrogen'},
   {id: 2, name: 'Helium'},
   {id: 3, name: 'Lithium'},
@@ -35,12 +35,12 @@ const EXAMPLE_DATA: AttendanceItem[] = [
 ];
 
 /**
- * Data source for the Attendance view. This class should
+ * Data source for the Sattend view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class AttendanceDataSource extends DataSource<AttendanceItem> {
-  data: AttendanceItem[] = EXAMPLE_DATA;
+export class SattendDataSource extends DataSource<SattendItem> {
+  data: SattendItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -53,7 +53,7 @@ export class AttendanceDataSource extends DataSource<AttendanceItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<AttendanceItem[]> {
+  connect(): Observable<SattendItem[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
@@ -77,7 +77,7 @@ export class AttendanceDataSource extends DataSource<AttendanceItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: AttendanceItem[]) {
+  private getPagedData(data: SattendItem[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -86,7 +86,7 @@ export class AttendanceDataSource extends DataSource<AttendanceItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: AttendanceItem[]) {
+  private getSortedData(data: SattendItem[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
