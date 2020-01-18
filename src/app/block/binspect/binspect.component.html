@@ -1,61 +1,67 @@
+<app-blocknav></app-blocknav>
 <div class="container">
   <div>
-    <form >
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div class="form-group">
         <div id="formdiv">
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Officer&#39;s Name </strong></p>
             </div>
-            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" name="name" placeholder="Name" required ngModel/></div>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" name="name" placeholder="Name" required ngModel /></div>
           </div>
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;margin-top:-16px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Alloted School</p>
+
+
             </div>
-            <div class="col-md-8 offset-md-1"><select class="form-control" style="font-family:Roboto, sans-serif;" name="gender"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-            <div class="col-md-10 offset-md-1">
-              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Inspection status</p>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" name="schallot" placeholder="School Alloted" required ngModel /></div>
+
+            <div class="col-md-8 offset-md-1">
+              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Sex </strong></p>
+
             </div>
-            <div class="col-md-10 offset-md-1"><select class="form-control" style="font-family:Roboto, sans-serif;" name="gender"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+            <div class="col d-inline-flex align-items-center m-auto" *ngFor="let sex of genders"><input type="radio" name="sex" ngModel [value]="sex" /><span>{{sex}}</span></div>
           </div>
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Officer&#39;s Qualification</p>
             </div>
-            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" placeholder="Qualification" required ngModel /></div>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" placeholder="Qualification" required ngModel name="qual" /></div>
           </div>
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
             <div class="col-md-8 offset-md-1">
-              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;" placeholder="Email Id" email required ngModel>Email Id</p>
+              <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Email Id</p>
             </div>
-            <div class="col-md-10 offset-md-1"><input class="form-control" type="email" /></div>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="email" placeholder="Email Id" email required ngModel name="email" /></div>
           </div>
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Administrative Data</p>
             </div>
-            <div class="col-md-10 offset-md-1" style="font-family:Roboto, sans-serif;"><textarea class="form-control" placeholder="Administrative Data" required ngModel></textarea></div>
+            <div class="col-md-10 offset-md-1" style="font-family:Roboto, sans-serif;"><textarea class="form-control" placeholder="Administrative Data" required ngModel name="adata"></textarea></div>
           </div>
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Fund Provided</p>
             </div>
-            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" placeholder="Fund" required ngModel /></div>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" placeholder="Fund" required ngModel name="fund" /></div>
           </div>
           <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">District</p>
             </div>
-            <div class="col-md-10 offset-md-1"><select class="form-control"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" name="dist" placeholder="Name" required ngModel /></div>
           </div>
           <div class="form-row" style="margin-right: 0px;margin-left: 0px;padding-top: 24px;">
             <div class="col-md-8 offset-md-1">
               <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Block</p>
             </div>
-            <div class="col-md-10 offset-md-1"><select class="form-control"><optgroup label="This is a group"><option value="12" selected>This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+            <div class="col-md-10 offset-md-1"><input class="form-control" type="text" style="margin-left:0px;font-family:Roboto, sans-serif;" name="block" placeholder="Name" required ngModel /></div>
           </div>
-          <div class="btn-group" role="group" style="margin-left: 326px;"><a class="btn btn-primary" role="button" style="margin-top: 10px;">clear</a><a class="btn btn-primary" role="button" style="margin-top: 10px;">submit</a></div>
+          <hr /><button class="btn btn-primary btn-block text-white btn-user" type="submit">Register Account</button>
+
         </div>
       </div>
     </form>

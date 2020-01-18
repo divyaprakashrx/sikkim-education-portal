@@ -55,6 +55,7 @@ import { DnavComponent } from './district/dnav/dnav.component';
 import { NtdetailComponent } from './school/ntdetail/ntdetail.component';
 import * as firebase from 'firebase/app';
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
+import { BinsdetailComponent } from './block/binsdetail/binsdetail.component';
 
 
 const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
@@ -63,6 +64,8 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
   { path: 'ntdetail', component: NtdetailComponent },
   { path: 'district', component: DistrictComponent },
   { path: 'block', component: BlockComponent },
+  { path: 'binsdetail', component: BinsdetailComponent },
+  { path: 'binspect', component: BinspectComponent },
   { path: 'smain', component: SmainComponent },
 { path: 'ssignup', component: SsignupComponent },
 { path: 'tdetail', component: TdetailComponent },
@@ -105,7 +108,8 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     DdashComponent,
     DnavComponent,
     NtdetailComponent,
-    UploadFormComponent
+    UploadFormComponent,
+    BinsdetailComponent
   ],
   imports: [
     BrowserModule,

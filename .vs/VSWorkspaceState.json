@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\block",
+    "\\src\\app\\block\\binsdetail",
     "\\src\\app\\block\\blocknav",
-    "\\src\\app\\district\\dnav",
+    "\\src\\app\\block\\bsregister",
     "\\src\\app\\school",
-    "\\src\\app\\school\\exam",
-    "\\src\\app\\school\\tdetail",
-    "\\src\\app\\student",
-    "\\src\\app\\student\\ssignup"
+    "\\src\\app\\school\\smain",
+    "\\src\\app\\student"
   ],
-  "SelectedNode": "\\src\\app\\school\\tdetail\\tdetail.component.html",
+  "SelectedNode": "\\src\\app\\block\\binspect\\binspect.component.html",
   "PreviewInSolutionExplorer": false
 }
