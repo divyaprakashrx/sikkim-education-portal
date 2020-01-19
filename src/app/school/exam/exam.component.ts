@@ -45,7 +45,13 @@ export class ExamComponent implements AfterViewInit, OnInit {
   onExport() {
     new ngxCsv(EXAMPLE_DATA, 'StudentReport');
   }
+  constructor(private ExamDetails: AngularFireDatabase) { }
+  examdetail: AngularFireList<any>;
 
+  getForm() {
+    this.examdetail = this.ExamDetails.list('Examdetails');
+    return this.examdetail.snapshotChanges();
+  }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
@@ -53,5 +59,6 @@ export class ExamComponent implements AfterViewInit, OnInit {
   }
   onSubmit(form: NgForm) {
     EXAMPLE_DATA.push(form.value);
+    this.examdetail.push(form.value);
   }
 }

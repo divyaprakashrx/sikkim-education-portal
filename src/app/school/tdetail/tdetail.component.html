@@ -3,7 +3,54 @@
   <div class="col"></div>
   <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 </div>
-
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group">
+    <div style="background-color:#90ee90" class="form-row">
+      <div class="col">
+        <span>First Name</span><input type="text" ngModel class="form-control" placeholder="First Name" required
+                                      name="sfname" />
+      </div>
+      <div class="col"><span>Last Name</span><input type="text" ngModel class="form-control" placeholder="Last Name" name="slname" /></div>
+      <div class="col">
+        <span>email</span><input type="email" ngModel class="form-control" placeholder="email"
+                                 name="email" />
+      </div>
+      <div class="col">
+      <span>address</span><input type="text" ngModel class="form-control" placeholder="address"
+                               name="address" />
+    </div>
+    <div class="col">
+      <span>date of birth</span><input type="date" ngModel class="form-control"
+                                       placeholder="dob"
+                                       name="dob" />
+    </div>
+    <div class="col">
+      <span>qualification</span><input type="text" ngModel class="form-control" placeholder="qualification"
+                                       name="qualification" />
+    </div>
+    <div class="col">
+      <span>sex</span><input type="text" ngModel class="form-control" placeholder="sex"
+                             name="sex" />
+    </div>
+    <div class="col">
+      <span>Teacher's id</span><input type="text" ngModel class="form-control" placeholder="tid"
+                                      name="tid" />
+    </div>
+  </div>
+    <div style="background-color:#90ee90" class="form-row">
+      <div class="col"><span>date of joining</span><input class="form-control" ngModel type="date" placeholder="doj" name="doj" required /></div>
+      <div class="col"><span>subject</span><input class="form-control" ngModel type="text" placeholder="sub" name="sub" required /></div>
+      <div class="col"><span>class alloted</span><input class="form-control" ngModel type="number" placeholder="call" name="call" required /></div>
+      <div class="col"><span>country code</span><input class="form-control" ngModel type="text" placeholder="cc" name="cc" required /></div>
+      <div class="col"><span>phone</span><input class="form-control" ngModel type="text" placeholder="phone" name="phone" required /></div>
+      <div class="col"><span>aadhar number</span><input class="form-control" ngModel type="text" placeholder="adn" name="adn" required /></div>
+      <div class="col"><span>account details</span><input class="form-control" ngModel type="text" placeholder="ad" name="ad" required /></div>
+      <div class="col">
+        <button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin:auto;">Add</button>
+      </div>
+    </div>
+  </div>
+</form>
 <div class="mat-elevation-z8">
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">

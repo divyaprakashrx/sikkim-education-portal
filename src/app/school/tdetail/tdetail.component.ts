@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { TdetailDataSource, TdetailItem, EXAMPLE_DATA } from './tdetail-datasource';
 import { ngxCsv } from 'ngx-csv';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 
 
@@ -39,19 +41,29 @@ export class TdetailComponent implements AfterViewInit, OnInit {
     'taadhar',
     'tacname'];
   onExport() {
-    new ngxCsv(EXAMPLE_DATA, 'StudentReport');
+    new ngxCsv(EXAMPLE_DATA, 'Teacher Details');
   }
   ngOnInit() {
     
   }
+  constructor(private TeacherDetails: AngularFireDatabase) { }
+  tdetail: AngularFireList<any>;
 
+  getForm() {
+    this.tdetail = this.TeacherDetails.list('tdetails');
+    return this.tdetail.snapshotChanges();
+  }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
     
   }
- 
+  onSubmit(form: NgForm) {
+    EXAMPLE_DATA.push(form.value);
+    this.getForm();
+    this.tdetail.push(form.value);
+  }
   
 }
 

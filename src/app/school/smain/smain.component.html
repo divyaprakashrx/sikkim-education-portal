@@ -1,7 +1,44 @@
 <app-schoolnav></app-schoolnav>
 <body>
   <section style="background-color: #9a4242;">
-    <ngb-carousel *ngIf="images">
+     <ngb-carousel *ngIf="images">
+
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" class="img-fluid">
+        </div>
+        <div class="carousel-caption">
+          <h3>Playground</h3>
+          <p>"There may be people that have more talent than you, but there's no excuse for anyone to work harder than you do."<br /><b>-Derek Jeter </b> 
+          </p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" class="img-fluid">
+        </div>
+        <div class="carousel-caption">
+          <h3>Mid day meal</h3>
+          <p><b>Mid day meal </b>scheme was launched in sikkim on 15th August 1995.</p>
+        </div>
+      </ng-template>
+
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Random third slide" class="img-fluid">
+        </div>
+        <div class="carousel-caption">
+          <h3>Education</h3>
+          <p>"Education is the most powerful weapon which you can use to change the world." <br />
+          <b>-Nelson Mandela</b></p>
+        </div>
+      </ng-template>
+ 
+
+    </ngb-carousel>
+
+
+    <!---<ngb-carousel *ngIf="images">
 
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
@@ -36,7 +73,7 @@
 
 
 
-    </ngb-carousel>
+    </ngb-carousel>-->
 
     Random second slide
   </section>
@@ -76,7 +113,7 @@ background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);">
     <div class="row" style="height: 900px;">
 
       <div class="col">
-        <img src="https://smedia2.intoday.in/aajtak/images/stories/012016/education-logo_650_012516030000.jpg" alt="Trulli" width="800" style="margin:auto;align-self:center;">
+        <img src="https://smedia2.intoday.in/aajtak/images/stories/012016/education-logo_650_012516030000.jpg" alt="Trulli" width="800" class="img-fluid">
       </div>
       <div class="col">
 
@@ -122,3 +159,4 @@ background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%);">
     </div>
   </section>
 </body>
+<app-sfoot></app-sfoot>

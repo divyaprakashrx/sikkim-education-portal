@@ -6,25 +6,30 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface NtdetailItem {
-  tfname: string,
-  tlname: string,
-  temail: string,
-  taddr: string,
-  tdob: string,
-  tqual: string,
-  tsex: string,
-  tsid: string,
-  tdoj: string,
-  tsub: string,
-  tclass: string,
-  tccode: string,
-  tphone: string,
-  taadhar: string,
-  tacname: string
+  ntfname: string;
+  ntlname: string;
+  ntqual: string;
+  ntdob: string;
+  ntsex: string;
+  ntaddr: string;
+  ntdoj: string;
+  ntphone: string;
+  ntaadhar: string;
 }
 
 // TODO: replace this with real data from your application
-export var EXAMPLE_DATA: NtdetailItem[] = [];
+const EXAMPLE_DATA: NtdetailItem[] = [
+  {
+    ntfname: 'string',
+    ntlname: 'string',
+    ntqual: 'string',
+    ntdob: 'string',
+    ntsex: 'string',
+    ntaddr: 'strin',
+    ntdoj: 'stri',
+    ntphone: 'string',
+    ntaadhar: 'string',}
+];
 
 /**
  * Data source for the Ntdetail view. This class should
@@ -32,11 +37,9 @@ export var EXAMPLE_DATA: NtdetailItem[] = [];
  * (including sorting, pagination, and filtering).
  */
 export class NtdetailDataSource extends DataSource<NtdetailItem> {
-  
   data: NtdetailItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
-  
 
   constructor() {
     super();
@@ -88,13 +91,16 @@ export class NtdetailDataSource extends DataSource<NtdetailItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'tfname': return compare(a.tfname, b.tfname, isAsc);
-        case 'tlname': return compare(a.tlname, b.tlname, isAsc);
-        case 'temail': return compare(a.temail, b.temail, isAsc);
-        case 'tsex': return compare(a.tsex, b.tsex, isAsc);
-        case 'tsid': return compare(a.tsid, b.tsid, isAsc);
-        case 'tdob': return compare(a.tdob, b.tdoj, isAsc);
-        case 'tclass': return compare(a.tclass, b.tclass, isAsc);
+        case 'ntfname': return compare(a.ntfname, b.ntfname, isAsc);
+        case 'ntlname': return compare(a.ntlname, b.ntlname, isAsc);
+        case 'ntqual': return compare(a.ntqual, b.ntqual, isAsc);
+        case 'ntdob': return compare(a.ntdob, b.ntdob, isAsc);
+        case 'ntsex': return compare(a.ntsex, b.ntsex, isAsc);
+        case 'ntaddr': return compare(a.ntaddr, b.ntaddr, isAsc);
+        case 'ntdoj': return compare(a.ntdoj, b.ntdoj, isAsc);
+        case 'ntphone': return compare(a.ntphone, b.ntphone, isAsc);
+        case 'ntaadhar': return compare(a.ntaadhar, b.ntaadhar, isAsc);
+        
         default: return 0;
       }
     });

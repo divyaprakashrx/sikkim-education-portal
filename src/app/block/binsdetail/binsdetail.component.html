@@ -1,18 +1,95 @@
 <app-blocknav></app-blocknav>
+<div class="row">
+  <div class="col"><h1>INSPECTION DASHBOARD</h1></div>
+  <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
+</div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group">
+    <div style="background-color:#90ee90" class="form-row">
+      <div class="col">
+        <span>Name</span><input type="text" ngModel class="form-control" placeholder="First Name" required
+                                      name="name" />
+      </div>
+      <div class="col">
+        <span>School Alloted</span><input type="text" ngModel class="form-control" placeholder="School Id"
+                                      name="schallot" />
+      </div>
+      <div class="col">
+        <span>Sex</span><input type="text" ngModel class="form-control"
+                                 placeholder="Sex"
+                                 name="sex" />
+      </div>
+      <div class="col">
+        <span>Qualification</span><input type="text" ngModel class="form-control" placeholder="Qualification"
+                                     name="qual" />
+      </div>
+      <div class="col">
+        <span>Email Id</span><input type="text" ngModel class="form-control" placeholder="Email" required email
+                                   name="email" />
+      </div>
+      <div class="col">
+        <span>Administrative Data</span><input type="text" ngModel class="form-control" placeholder="Administrative Data"
+                                   name="adata" />
+      </div>
+    </div>
+    <div style="background-color:#90ee90" class="form-row">
+      <div class="col"><span>Fund</span><input class="form-control" ngModel type="text" placeholder="Fund" name="fund" required /></div>
+      <div class="col"><span>District</span><input class="form-control" ngModel type="text" placeholder="District" name="dist" required /></div>
+      <div class="col"><span>Date of Inspection</span><input class="form-control" ngModel type="text" placeholder="English" name="doi" required /></div>
+      <div class="col"><span>Inspection Status</span><input class="form-control" ngModel type="text" placeholder="Inspection Status" name="status" required /></div>
+      <div class="col">
+        <button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin:auto;">Add</button>
+      </div>
+    </div>
+  </div>
+</form>
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
-    </ng-container>
-
-    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
       <td mat-cell *matCellDef="let row">{{row.name}}</td>
     </ng-container>
-
+    <ng-container matColumnDef="schallot">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>School Alloted</th>
+      <td mat-cell *matCellDef="let row">{{row.schallot}}</td>
+    </ng-container>
+    <ng-container matColumnDef="sex">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Sex</th>
+      <td mat-cell *matCellDef="let row">{{row.sex}}</td>
+    </ng-container>
+    <ng-container matColumnDef="qual">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Qualification</th>
+      <td mat-cell *matCellDef="let row">{{row.qual}}</td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+    <ng-container matColumnDef="adata">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Administrative Data</th>
+      <td mat-cell *matCellDef="let row">{{row.adata}}</td>
+    </ng-container>
+    <ng-container matColumnDef="fund">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fund</th>
+      <td mat-cell *matCellDef="let row">{{row.fund}}</td>
+    </ng-container>
+    <ng-container matColumnDef="dist">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>District</th>
+      <td mat-cell *matCellDef="let row">{{row.dist}}</td>
+    </ng-container>
+    <ng-container matColumnDef="block">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Block</th>
+      <td mat-cell *matCellDef="let row">{{row.block}}</td>
+    </ng-container>
+    <ng-container matColumnDef="doi">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Inspection</th>
+      <td mat-cell *matCellDef="let row">{{row.doi}}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Inspection</th>
+      <td mat-cell *matCellDef="let row">{{row.status}}</td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

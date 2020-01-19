@@ -12,7 +12,7 @@ describe('NtdetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NtdetailComponent],
+      declarations: [ NtdetailComponent ],
       imports: [
         NoopAnimationsModule,
         MatPaginatorModule,

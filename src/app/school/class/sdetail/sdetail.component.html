@@ -3,6 +3,58 @@
   <div class="col"><h1>Student Details</h1></div>
   <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 </div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group">
+    <div style="background-color:#90ee90" class="form-row">
+      <div class="col">
+        <span>Student First Name</span><input type="text" ngModel class="form-control" placeholder="sfn" required
+                                              name="sfname" />
+      </div>
+      <div class="col"><span>Student Last Name</span><input type="text" ngModel class="form-control" placeholder="sln" name="slname" /></div>
+      <div class="col">
+        <span>father's first name</span><input type="text" ngModel class="form-control" placeholder="ffn"
+                                               name="ffn" />
+      </div>
+      <div class="col">
+        <span>father's last name</span><input type="text" ngModel class="form-control" placeholder="fln"
+                                              name="fln" />
+      </div>
+      <div class="col">
+        <span>mother's first name</span><input type="text" ngModel class="form-control"
+                                               placeholder="mfn"
+                                               name="mfn" />
+      </div>
+      <div class="col">
+        <span>mothers's last name</span><input type="text" ngModel class="form-control" placeholder="mln"
+                                               name="mln" />
+      </div>
+      <div class="col">
+        <span>email</span><input type="email" ngModel class="form-control" placeholder="email"
+                                 name="email" />
+      </div>
+      <div class="col">
+        <span>address</span><input type="text" ngModel class="form-control" placeholder="add"
+                                   name="add" />
+      </div>
+      <div class="col"><span>date of birth</span><input class="form-control" ngModel type="date" placeholder="dob" name="dob" required /></div>
+      <div class="col"><span>sex</span><input class="form-control" ngModel type="text" placeholder="sex" name="sex" required /></div>
+    </div>
+    <div style="background-color:#90ee90" class="form-row">
+      <div class="col"><span>school id</span><input class="form-control" ngModel type="number" placeholder="sid" name="sid" required /></div>
+      <div class="col"><span>class</span><input class="form-control" ngModel type="number" placeholder="class" name="class" required /></div>
+      <div class="col"><span>code</span><input class="form-control" ngModel type="text" placeholder="code" name="code" required /></div>
+      <div class="col"><span>phone</span><input class="form-control" ngModel type="text" placeholder="phone" name="phone" required /></div>
+      <div class="col"><span>aadhar number</span><input class="form-control" ngModel type="text" placeholder="adn" name="adn" required /></div>
+      <div class="col"><span>age</span><input class="form-control" ngModel type="text" placeholder="age" name="age" required /></div>
+      <div class="col"><span>weight</span><input class="form-control" ngModel type="text" placeholder="weight" name="weight" required /></div>
+      <div class="col"><span>eye sight</span><input class="form-control" ngModel type="text" placeholder="eye" name="eye" required /></div>
+      <div class="col"><span>past diseases</span><input class="form-control" ngModel type="text" placeholder="diseases" name="diseases" required /></div>
+      <div class="col">
+        <button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin:auto;">Add</button>
+      </div>
+    </div>
+  </div>
+</form>
 <div class="mat-elevation-z8">
   <mat-paginator #paginator
                  [length]="dataSource?.data.length"
@@ -72,7 +124,23 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Aadhar No.</th>
       <td mat-cell *matCellDef="let row">{{row.saadhar}}</td>
     </ng-container>
-   
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>age</th>
+      <td mat-cell *matCellDef="let row">{{row.age}}</td>
+    </ng-container>
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>weight</th>
+      <td mat-cell *matCellDef="let row">{{row.weight}}</td>
+    </ng-container>
+    <ng-container matColumnDef="eye">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>eye sight</th>
+      <td mat-cell *matCellDef="let row">{{row.eye}}</td>
+    </ng-container>
+    <ng-container matColumnDef="diseases">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>past diseases</th>
+      <td mat-cell *matCellDef="let row">{{row.diseases}}</td>
+    </ng-container>
+
     <!-- Name Column -->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

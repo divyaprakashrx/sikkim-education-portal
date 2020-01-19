@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\block",
     "\\src\\app\\block\\binsdetail",
-    "\\src\\app\\block\\blocknav",
-    "\\src\\app\\block\\bsregister",
     "\\src\\app\\school",
-    "\\src\\app\\school\\smain",
-    "\\src\\app\\student"
+    "\\src\\app\\school\\class",
+    "\\src\\app\\school\\class\\sdetail",
+    "\\src\\app\\student",
+    "\\src\\app\\student\\ssignup"
   ],
-  "SelectedNode": "\\src\\app\\block\\binspect\\binspect.component.html",
+  "SelectedNode": "\\src\\app\\block\\binsdetail\\binsdetail.component.ts",
   "PreviewInSolutionExplorer": false
 }

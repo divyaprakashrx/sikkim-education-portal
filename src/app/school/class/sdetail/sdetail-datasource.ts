@@ -21,6 +21,10 @@ export interface SdetailItem {
   sccode: string,
   sphone: string,
   saadhar: string,
+  age: string,
+  weight: string,
+  eye: string,
+  diseases: string,
 }
 
 // TODO: replace this with real data from your application
@@ -41,6 +45,10 @@ export var EXAMPLE_DATA: SdetailItem[] = [
     sccode: 'string',
     sphone: 'string',
     saadhar: 'string',
+    age: 'string',
+    weight: 'string',
+    eye: 'string',
+    diseases: 'string',
   },];
 
 /**
@@ -110,6 +118,8 @@ export class SdetailDataSource extends DataSource<SdetailItem> {
         case 'ssid': return compare(a.ssid, b.ssid, isAsc);
         case 'sdob': return compare(a.sdob, b.sdob, isAsc);
         case 'sclass': return compare(a.sclass, b.sclass, isAsc);
+        case 'age': return compare(a.age, b.age, isAsc);
+        case 'weight': return compare(a.weight, b.weight, isAsc);
         default: return 0;
       }
     });
