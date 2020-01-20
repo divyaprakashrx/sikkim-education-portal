@@ -45,6 +45,7 @@ export class SattendComponent implements AfterViewInit, OnInit {
   }
   onSubmit(form: NgForm) {
     EXAMPLE_DATA.push(form.value);
+    this.getdetail();
     this.attendance.push(form.value);
   }
 }

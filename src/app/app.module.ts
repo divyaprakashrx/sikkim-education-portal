@@ -7,6 +7,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';
+import { ButtonsModule, WavesModule, CardsModule } from 'angular-bootstrap-md';
 
 
 
@@ -143,7 +144,9 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     MatSortModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     PapaParseModule,
-
+    ButtonsModule,
+    WavesModule,
+    CardsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

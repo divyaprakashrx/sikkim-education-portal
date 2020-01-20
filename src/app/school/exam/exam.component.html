@@ -1,5 +1,6 @@
 <app-schoolnav></app-schoolnav>
-<div class="row">
+<div class="row" style="    background-image: radial-gradient( circle 613px at 24.5% 36%, rgba(165,233,138,1) 0%, #bbb 90% );
+">
   <div class="col"><h1>Exam Details</h1></div>
   <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 </div>
@@ -33,10 +34,6 @@
   </div>
 </form>
 <div class="mat-elevation-z8">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-
   <table mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- sfname Column -->
     <ng-container matColumnDef="sfname">

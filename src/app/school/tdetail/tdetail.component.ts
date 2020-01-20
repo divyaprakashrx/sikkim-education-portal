@@ -19,11 +19,7 @@ export class TdetailComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatTable, { static: false }) table: MatTable<TdetailItem>;
   dataSource: TdetailDataSource;
-  dat = new MatTableDataSource(EXAMPLE_DATA);
-
-  applyFilter(filterValue: string) {
-    this.dat.filter = filterValue.trim().toLowerCase();
-  }
+  
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['tfname',
     'tlname',
@@ -44,7 +40,8 @@ export class TdetailComponent implements AfterViewInit, OnInit {
     new ngxCsv(EXAMPLE_DATA, 'Teacher Details');
   }
   ngOnInit() {
-    
+    this.dataSource = new TdetailDataSource();
+
   }
   constructor(private TeacherDetails: AngularFireDatabase) { }
   tdetail: AngularFireList<any>;
@@ -60,6 +57,7 @@ export class TdetailComponent implements AfterViewInit, OnInit {
     
   }
   onSubmit(form: NgForm) {
+    console.log(form.value);
     EXAMPLE_DATA.push(form.value);
     this.getForm();
     this.tdetail.push(form.value);

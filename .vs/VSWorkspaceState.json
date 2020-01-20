@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\block",
-    "\\src\\app\\block\\binsdetail",
+    "\\src\\app\\home",
     "\\src\\app\\school",
-    "\\src\\app\\school\\class",
-    "\\src\\app\\school\\class\\sdetail",
-    "\\src\\app\\student",
-    "\\src\\app\\student\\ssignup"
+    "\\src\\app\\school\\sattend",
+    "\\src\\app\\school\\sdashboard",
+    "\\src\\app\\school\\smain",
+    "\\src\\app\\school\\teacher",
+    "\\src\\app\\school\\teacher\\tregister"
   ],
-  "SelectedNode": "\\src\\app\\block\\binsdetail\\binsdetail.component.ts",
+  "SelectedNode": "\\src\\app\\home\\home.component.html",
   "PreviewInSolutionExplorer": false
 }
