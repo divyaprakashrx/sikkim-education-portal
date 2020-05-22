@@ -6,6 +6,8 @@ import { map, shareReplay } from 'rxjs/operators';
 import * as CanvasJS from '../../../assets/canvasjs.min';
 import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { DropdownModule } from 'angular-bootstrap-md';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-ddash',
@@ -15,6 +17,8 @@ import { DropdownModule } from 'angular-bootstrap-md';
 export class DdashComponent implements OnInit {
 
   constructor() { }
+  edit = false;
+  invest = investment.Food + investment.Administration + investment.ExamSection + investment.Others + investment.PlayGroup;
 
   ngOnInit() {
     let chart = new CanvasJS.Chart("barchart", {
@@ -65,7 +69,43 @@ export class DdashComponent implements OnInit {
     circle.render();
   
   }
-
+  onEdit() {
+    this.edit = true;
+  }
+  onSubmit(form: NgForm) {
+    investment.Food = form.value.Food;
+    investment.Administration = form.value.Administration;
+    investment.ExamSection = form.value.Infrastructure;
+    investment.Education = form.value.Education;
+    investment.PlayGroup = form.value.PlayGroup;
+    investment.Others = form.value.Others;
+    this.edit = false;
+    let circle = new CanvasJS.Chart("progress", {
+      theme: "light2",
+      animationEnabled: true,
+      exportEnabled: true,
+      title: {
+        text: "Invesments"
+      },
+      data: [{
+        type: "pie",
+        showInLegend: true,
+        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        indexLabel: "{name} - #percent%",
+        dataPoints: [
+          { y: investment.Food, name: "Food" },
+          { y: investment.Administration, name: "Administration" },
+          { y: investment.ExamSection, name: "Exam Section" },
+          { y: investment.Infrastructure, name: "Infrastructure" },
+          { y: investment.Education, name: "Education" },
+          { y: investment.PlayGroup, name: "Play Group" },
+          { y: investment.Others, name: "Others" }
+        ]
+      }]
+    });
+    circle.render();
+    this.invest = investment.Food + investment.Administration + investment.ExamSection + investment.Others + investment.PlayGroup;
+  }
 }
 var investment = {
   Food: 450,

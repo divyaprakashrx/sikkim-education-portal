@@ -7,31 +7,33 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // TODO: Replace this with your own data model type
 export interface SattendItem {
   name: string;
+  class: string;
   id: number;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: SattendItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+export var EXAMPLE_DATA: SattendItem[] = [
+  { id: 1, name: 'Hydrogen', class: 'Hydrogen'},
+  { id: 2, name: 'Helium', class: 'Hydrogen'},
+  { id: 3, name: 'Lithium', class: 'Hydrogen'},
+  { id: 4, name: 'Beryllium', class: 'Hydrogen'},
+  { id: 5, name: 'Boron', class: 'Hydrogen'},
+  { id: 6, name: 'Carbon', class: 'Hydrogen'},
+  { id: 7, name: 'Nitrogen', class: 'Hydrogen'},
+  { id: 8, name: 'Oxygen', class: 'Hydrogen'},
+  { id: 9, name: 'Fluorine', class: 'Hydrogen'},
+  { id: 10, name: 'Neon', class: 'Hydrogen'},
+  { id: 11, name: 'Sodium', class: 'Hydrogen'},
+  { id: 12, name: 'Magnesium', class: 'Hydrogen'},
+  { id: 13, name: 'Aluminum', class: 'Hydrogen'},
+  { id: 14, name: 'Silicon', class: 'Hydrogen'},
+  { id: 15, name: 'Phosphorus', class: 'Hydrogen'},
+  { id: 16, name: 'Sulfur', class: 'Hydrogen'},
+  { id: 17, name: 'Chlorine', class: 'Hydrogen'},
+  { id: 18, name: 'Argon', class: 'Hydrogen'},
+  { id: 19, name: 'Potassium', class: 'Hydrogen'},
+  { id: 20, name: 'Calcium', class: 'Hydrogen'},
+  { id: 20, name: 'Calcium', class: 'Hydrogen'},
 ];
 
 /**
@@ -95,6 +97,7 @@ export class SattendDataSource extends DataSource<SattendItem> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
+        case 'class': return compare(a.class, b.class, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }

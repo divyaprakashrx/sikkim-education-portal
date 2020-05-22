@@ -15,6 +15,8 @@ export interface BinsdetailItem {
   fund: number;
   dist: string;
   block: string;
+  doi: string;
+  status:string
 }
 
 // TODO: replace this with real data from your application

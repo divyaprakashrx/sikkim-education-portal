@@ -1,13 +1,65 @@
 <app-schoolnav></app-schoolnav>
-<div class="row">
-  <div class="col"></div>
-  <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
-</div>
+    <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 
-<div class="mat-elevation-z8">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
+<mdb-card>
+  <mdb-card-body>
+    <mdb-card-title>
+    </mdb-card-title>
+    <mdb-card-text>
+
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <div style="background-color:#90ee90" class="form-row">
+            <div class="col">
+              <span>First Name</span><input type="text" ngModel class="form-control" placeholder="First Name" required
+                                            name="tfname" />
+            </div>
+            <div class="col"><span>Last Name</span><input type="text" ngModel class="form-control" placeholder="Last Name" name="tlname" /></div>
+            <div class="col">
+              <span>email</span><input type="email" ngModel class="form-control" placeholder="email"
+                                       name="temail" />
+            </div>
+            <div class="col">
+              <span>address</span><input type="text" ngModel class="form-control" placeholder="address"
+                                         name="taddr" />
+            </div>
+            <div class="col">
+              <span>date of birth</span><input type="date" ngModel class="form-control"
+                                               placeholder="dob"
+                                               name="tdob" />
+            </div>
+            <div class="col">
+              <span>qualification</span><input type="text" ngModel class="form-control" placeholder="qualification"
+                                               name="tqual" />
+            </div>
+            <div class="col">
+              <span>sex</span><input type="text" ngModel class="form-control" placeholder="sex"
+                                     name="tsex" />
+            </div>
+            <div class="col">
+              <span>Teacher's id</span><input type="text" ngModel class="form-control" placeholder="tid"
+                                              name="tsid" />
+            </div>
+          </div>
+          <div style="background-color:#90ee90" class="form-row">
+            <div class="col"><span>date of joining</span><input class="form-control" ngModel type="date" placeholder="doj" name="tdoj" required /></div>
+            <div class="col"><span>subject</span><input class="form-control" ngModel type="text" placeholder="sub" name="tsub" required /></div>
+            <div class="col"><span>class alloted</span><input class="form-control" ngModel type="number" placeholder="class" name="tclass" required /></div>
+            <div class="col"><span>country code</span><input class="form-control" ngModel type="text" placeholder="cc" name="tccode" required /></div>
+            <div class="col"><span>phone</span><input class="form-control" ngModel type="text" placeholder="phone" name="tphone" required /></div>
+            <div class="col"><span>aadhar number</span><input class="form-control" ngModel type="text" placeholder="adn" name="taadhar" required /></div>
+            <div class="col"><span>account details</span><input class="form-control" ngModel type="text" placeholder="account detail" name="tacname" required /></div>
+            <div class="col">
+              <button class="btn btn-primary btn-block text-white btn-user" type="submit" style="margin:auto;">Add</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mdb-card-text>
+
+  </mdb-card-body>
+</mdb-card>
+<mdb-card><div class="mat-elevation-z8">
 
   <mat-paginator #paginator
                  [length]="dataSource?.data.length"
@@ -82,4 +134,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-</div>
+</div></mdb-card>
+

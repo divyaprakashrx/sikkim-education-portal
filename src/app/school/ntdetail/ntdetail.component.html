@@ -1,85 +1,57 @@
 <app-schoolnav></app-schoolnav>
-<div class="row">
-  <div class="col"></div>
-  <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
-</div>
 
 <div class="mat-elevation-z8">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-
-  <mat-paginator #paginator
-                 [length]="dataSource?.data.length"
-                 [pageIndex]="0"
-                 [pageSize]="50"
-                 [pageSizeOptions]="[25, 50, 100, 250]">
-  </mat-paginator>
   <table mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- Id Column -->
-    <ng-container matColumnDef="tfname">
+    <ng-container matColumnDef="ntfname">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
-      <td mat-cell *matCellDef="let row">{{row.tfname}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ntfname}}</td>
     </ng-container>
-    <ng-container matColumnDef="tlname">
+    <ng-container matColumnDef="ntlname">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
-      <td mat-cell *matCellDef="let row">{{row.tlname}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ntlname}}</td>
     </ng-container>
-    <ng-container matColumnDef="temail">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-      <td mat-cell *matCellDef="let row">{{row.email}}</td>
-    </ng-container>
-    <ng-container matColumnDef="taddr">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
-      <td mat-cell *matCellDef="let row">{{row.taddr}}</td>
-    </ng-container>
-    <ng-container matColumnDef="tdob">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
-      <td mat-cell *matCellDef="let row">{{row.tdob}}</td>
-    </ng-container>
-    <ng-container matColumnDef="tqual">
+
+    <ng-container matColumnDef="ntqual">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Qualification</th>
-      <td mat-cell *matCellDef="let row">{{row.tqual}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ntqual}}</td>
     </ng-container>
-    <ng-container matColumnDef="tsex">
+    <ng-container matColumnDef="ntdob">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
+      <td mat-cell *matCellDef="let row">{{row.ntdob}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ntsex">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Sex</th>
-      <td mat-cell *matCellDef="let row">{{row.tsex}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ntsex}}</td>
     </ng-container>
-    <ng-container matColumnDef="tsid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.tsid}}</td>
+    <ng-container matColumnDef="ntaddr">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+      <td mat-cell *matCellDef="let row">{{row.ntaddr}}</td>
     </ng-container>
-    <ng-container matColumnDef="tdoj">
+    <ng-container matColumnDef="ntdoj">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Joining</th>
-      <td mat-cell *matCellDef="let row">{{row.tdoj}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ntdoj}}</td>
     </ng-container>
-    <ng-container matColumnDef="tsub">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Subject</th>
-      <td mat-cell *matCellDef="let row">{{row.tsub}}</td>
-    </ng-container>
-    <ng-container matColumnDef="tclass">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Class Alloted</th>
-      <td mat-cell *matCellDef="let row">{{row.tclass}}</td>
-    </ng-container>
-    <ng-container matColumnDef="tccode">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Country Code</th>
-      <td mat-cell *matCellDef="let row">{{row.tccode}}</td>
-    </ng-container>
-    <ng-container matColumnDef="tphone">
+    <ng-container matColumnDef="ntphone">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
-      <td mat-cell *matCellDef="let row">{{row.tphone}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ntphone}}</td>
     </ng-container>
-    <ng-container matColumnDef="taadhar">
+    <ng-container matColumnDef="ntaadhar">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Aadhar</th>
-      <td mat-cell *matCellDef="let row">{{row.taadhar}}</td>
+      <td mat-cell *matCellDef="let row">{{row.aadhar}}</td>
     </ng-container>
-    <ng-container matColumnDef="tacname">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Account Details</th>
-      <td mat-cell *matCellDef="let row">{{row.tacname}}</td>
-    </ng-container>
+
     <!-- Name Column -->
+
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
 </div>

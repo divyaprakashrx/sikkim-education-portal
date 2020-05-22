@@ -4,6 +4,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { SdetailDataSource, SdetailItem, EXAMPLE_DATA } from './sdetail-datasource';
 import { ngxCsv } from 'ngx-csv';
+import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-sdetail',
@@ -31,17 +34,33 @@ export class SdetailComponent implements AfterViewInit, OnInit {
     'sclass',
     'sccode',
     'sphone',
-    'saadhar'];
+    'saadhar',
+    'age',
+    'weight',
+    'eye',
+  'diseases'];
   onExport() {
     new ngxCsv(EXAMPLE_DATA, 'StudentReport');
   }
   ngOnInit() {
     this.dataSource = new SdetailDataSource();
   }
+  constructor(private StudentDetails: AngularFireDatabase) { }
+  sdetail: AngularFireList<any>;
 
+  getForm() {
+    this.sdetail = this.StudentDetails.list('student/I');
+    return this.sdetail.snapshotChanges();
+  }
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+  onSubmit(form: NgForm) {
+    EXAMPLE_DATA.push(form.value);
+    this.getForm();
+    this.sdetail.push(form.value);
+  }
+
 }

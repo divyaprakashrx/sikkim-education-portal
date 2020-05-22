@@ -1,11 +1,12 @@
 <app-schoolnav></app-schoolnav>
-<div class="row">
-  <div class="col"><h1>Student Details</h1></div>
+<div class="row" style="    background-image: radial-gradient( circle 613px at 24.5% 36%, rgba(165,233,138,1) 0%, #bbb 90% );
+">
+  <div class="col"><h1>Exam Details</h1></div>
   <div class="col-xl-3 d-inline-flex justify-content-center align-items-center align-content-center m-auto" style="width: 60px;"><button class="btn btn-primary align-self-center" (click)="onExport()">Export</button></div>
 </div>
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="form-group">
-    <div class="form-row">
+    <div style="background-color:#90ee90" class="form-row">
       <div class="col"><span>First Name</span><input type="text" ngModel class="form-control" placeholder="First Name" required
                                  name="sfname" /></div>
       <div class="col"><span>Last Name</span><input type="text" ngModel class="form-control" placeholder="Last Name" name="slname" /></div>
@@ -21,7 +22,7 @@
       <div class="col"><span>History</span><input type="text" ngModel class="form-control" placeholder="History"
                                  name="history" /></div>
     </div>
-    <div class="form-row">
+    <div style="background-color:#90ee90" class="form-row">
       <div class="col"><span>Civics</span><input class="form-control" ngModel type="text" placeholder="Civics" name="civics" required /></div>
       <div class="col"><span>Economics</span><input class="form-control" ngModel type="text" placeholder="Economics" name="economics" required /></div>
       <div class="col"><span>English</span><input class="form-control" ngModel type="text" placeholder="English" name="english" required /></div>
@@ -33,10 +34,6 @@
   </div>
 </form>
 <div class="mat-elevation-z8">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-
   <table mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- sfname Column -->
     <ng-container matColumnDef="sfname">

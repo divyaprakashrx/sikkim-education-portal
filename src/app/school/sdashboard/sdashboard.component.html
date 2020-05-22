@@ -1,13 +1,45 @@
 
 <!--Carousel-->
-<body id="page-top">
+<body id="page-top" style="    background-image: linear-gradient( 109.6deg, rgba(204,228,247,1) 11.2%, rgba(237,246,250,1) 100.2% );
+">
   <div id="wrapper">
     <div class="d-flex flex-column" id="content-wrapper">
       <div id="content">
         <div class="container-fluid">
           <div class="d-sm-flex justify-content-between align-items-center mb-4">
             <h3 class="text-dark mb-0">Dashboard</h3>
-  <!--<a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
+  <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" (click)="onEdit()"><i class="fas fa-download fa-sm text-white-50"></i> Edit</a>
+            <div class="row" *ngIf="edit"><form style="width: 253px;" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-row">
+    <div class="col-lg-6"><span class="d-inline-flex">Food</span></div>
+    <div class="col-lg-6"><input type="number" class="form-control" ngModel name="Food" /></div>
+  </div>
+  <div class="form-row">
+    <div class="col"><span class="d-inline-flex">Administration</span></div>
+    <div class="col"><input type="number" class="form-control" ngModel name="Administration"/></div>
+  </div>
+  <div class="form-row">
+    <div class="col"><span class="d-inline-flex">ExamSection</span></div>
+    <div class="col"><input type="number" class="form-control" ngModel name="ExamSection"/></div>
+  </div>
+  <div class="form-row">
+    <div class="col"><span class="d-inline-flex">Infrastructure</span></div>
+    <div class="col"><input type="number" class="form-control" ngModel name="Infrastructure"/></div>
+  </div>
+  <div class="form-row">
+    <div class="col"><span class="d-inline-flex">Education</span></div>
+    <div class="col"><input type="number" class="form-control" ngModel name="Education"/></div>
+  </div>
+  <div class="form-row">
+    <div class="col"><span class="d-inline-flex">PlayGroup</span></div>
+    <div class="col"><input type="number" class="form-control" ngModel name="PlayGroup"/></div>
+  </div>
+  <div class="form-row">
+    <div class="col"><span class="d-inline-flex">Others</span></div>
+    <div class="col"><input class="form-control" type="number" ngModel name="Others"/></div>
+  </div>
+  <button class="btn btn-primary" type="submit">Save</button>
+</form></div>
           </div>
           <div class="row">
             <div class="col-md-6 col-xl-3 mb-4">
@@ -15,21 +47,9 @@
                 <div class="card-body">
                   <div class="row align-items-center no-gutters">
                     <div class="col mr-2">
-                      <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><div class="btn-group" mdbDropdown>
-  <li class="nav-item dropdown" dropdown>
-    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-      INVESTMENTS<span class="caret"></span>
-    </a>
-    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-      <a class="dropdown-item waves-light" mdbWavesEffect>Teacher</a>
-      <a class="dropdown-item waves-light" mdbWavesEffect>Student</a>
-      <div class="divider dropdown-divider"></div>
-      <a class="dropdown-item waves-light" mdbWavesEffect>Administration</a>
-      <div class="divider dropdown-divider"></div>
-    </div>
-  </li>
-</div></div>
-                        <div class="text-dark font-weight-bold h5 mb-0"><span>$40000</span></div>
+                      <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
+                      <span class="cater">INVESTMENTS</span></div>
+                        <div class="text-dark font-weight-bold h5 mb-0"><span>₹{{invest}}</span></div>
                       </div>
                       <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                     </div>
@@ -42,22 +62,7 @@
                   <div class="row align-items-center no-gutters">
                     <div class="col mr-2">
                       <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
-                        <div class="btn-group" mdbDropdown>
-                          <li class="nav-item dropdown" dropdown>
-                            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                              FUNDS ASSIGNED<span class="caret"></span>
-                            </a>
-                            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                              <a class="dropdown-item waves-light" mdbWavesEffect>FOOD</a>
-                              <a class="dropdown-item waves-light" mdbWavesEffect>Administration</a>
-                              <div class="divider dropdown-divider"></div>
-                              <a class="dropdown-item waves-light" mdbWavesEffect>SCHOLARSHIPS</a>
-                              <a class="dropdown-item waves-light" mdbWavesEffect>INFRASTRUCTURE</a>
-                              <a class="dropdown-item waves-light" mdbWavesEffect>OTHERS</a>
-                              <div class="divider dropdown-divider"></div>
-                            </div>
-                          </li>
-                        </div>
+                        <span class="caret">FUNDS</span>
                       </div>
                       <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
                     </div>
@@ -120,7 +125,7 @@
             <div class="col-lg-7 col-xl-8">
               <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                  <h6 class="text-primary font-weight-bold m-0">Earnings Overview</h6>
+                  <h6 class="text-primary font-weight-bold m-0">Notices</h6>
                   <div class="dropdown no-arrow">
                     <button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in"
@@ -131,7 +136,11 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div id="barchart" style="height: 370px; width: 100%;"></div>
+                  <div class="row"><p>The Indian rupee is the official currency of India.</p></div><hr />
+                  <div class="row"><p>The Indian rupee is the official currency of India.</p></div><hr />
+                  <div class="row"><p>The Indian rupee is the official currency of India.</p></div><hr />
+                  <div class="row"><p>The Indian rupee is the official currency of India.</p></div><hr />
+                  <div class="row"><p>The Indian rupee is the official currency of India.</p></div><hr />
                 </div>
               </div>
             </div>

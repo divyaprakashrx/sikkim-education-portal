@@ -7,6 +7,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownModule, NavbarModule, IconsModule } from 'angular-bootstrap-md';
+import { ButtonsModule, WavesModule, CardsModule } from 'angular-bootstrap-md';
 
 
 
@@ -52,15 +53,17 @@ import { BinspectComponent } from './block/binspect/binspect.component';
 import { DistrictComponent } from './district/district.component';
 import { DdashComponent } from './district/ddash/ddash.component';
 import { DnavComponent } from './district/dnav/dnav.component';
-import { NtdetailComponent } from './school/ntdetail/ntdetail.component';
 import * as firebase from 'firebase/app';
 import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
 import { BinsdetailComponent } from './block/binsdetail/binsdetail.component';
+import { NtdetailComponent } from './school/ntdetail/ntdetail.component';
+import { SfootComponent } from './school/sfoot/sfoot.component';
 
 
 const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
 { path: 'school', component: SchoolComponent },
   { path: '', component: HomeComponent },
+  { path: 'sattend', component:SattendComponent },
   { path: 'ntdetail', component: NtdetailComponent },
   { path: 'district', component: DistrictComponent },
   { path: 'block', component: BlockComponent },
@@ -107,9 +110,10 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     DistrictComponent,
     DdashComponent,
     DnavComponent,
-    NtdetailComponent,
     UploadFormComponent,
-    BinsdetailComponent
+    BinsdetailComponent,
+    NtdetailComponent,
+    SfootComponent
   ],
   imports: [
     BrowserModule,
@@ -140,7 +144,9 @@ const appRoutes: Routes = [{ path: 'login', component: LoginComponent },
     MatSortModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     PapaParseModule,
-
+    ButtonsModule,
+    WavesModule,
+    CardsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
