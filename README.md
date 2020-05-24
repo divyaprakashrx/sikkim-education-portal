@@ -1,6 +1,8 @@
-# Hack
+# Sikkim Education Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+This is a web app made for Smart India Hackathon 2020 for offline database management of schools of sikkim government which can be updated whenever their is availability of internet. It is also capable of providing excel sheets of data which can be mailed easily.
+
+It uses firebase as its database storage.
 
 ## Development server
 
