@@ -40,7 +40,7 @@
     "jquery": "^3.4.1",
     "ngx-csv": "^0.3.1",
     "ngx-papaparse": "^3.0.4",
-    "papaparse": "^5.1.1",
+    "papaparse": "^5.2.0",
     "rxjs": "^6.4.0",
     "save": "^2.4.0",
     "schematics": "^0.2.0",
